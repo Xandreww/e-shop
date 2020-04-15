@@ -2255,11 +2255,6 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap-icons@^1.0.0-alpha3:
-  version "1.0.0-alpha3"
-  resolved "https://registry.yarnpkg.com/bootstrap-icons/-/bootstrap-icons-1.0.0-alpha3.tgz#413171e88b79315e712e6ab65601f64b1735d566"
-  integrity sha512-UO++43jb/qlWVsC31WkHOjFsTihJkSz0wngnUS+P1ImcCMTqDJqDHySld+hpkzxi+q6fL8iom7nfT3ApAxZ6cQ==
-
 bootstrap@^4.4.1:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.4.1.tgz#8582960eea0c5cd2bede84d8b0baf3789c3e8b01"
@@ -9095,14 +9090,6 @@ react-app-polyfill@^1.0.4:
     regenerator-runtime "0.13.3"
     whatwg-fetch "3.0.0"
 
-react-bootstrap-icons@^1.0.1-alpha3:
-  version "1.0.1-alpha3"
-  resolved "https://registry.yarnpkg.com/react-bootstrap-icons/-/react-bootstrap-icons-1.0.1-alpha3.tgz#796e8c6f38bcd01b721ff98f04452b939630c093"
-  integrity sha512-A8ZEUs4t/U1buv2mnEjo+xmo1jPodx3FotT+vLZmcr7YT+qtNNHaWpiEBWrFDuOEFuu0jUi/4tyhkfYM1LhQ+w==
-  dependencies:
-    bootstrap-icons "^1.0.0-alpha3"
-    prop-types "^15.7.2"
-
 react-bootstrap@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-1.0.0.tgz#ed812810205e75b8e4a84b9514d79de090cdc627"
@@ -9167,6 +9154,13 @@ react-error-overlay@^6.0.3:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.3.tgz#c378c4b0a21e88b2e159a3e62b2f531fd63bf60d"
   integrity sha512-bOUvMWFQVk5oz8Ded9Xb7WVdEi3QGLC8tH7HmYP0Fdp4Bn3qw0tRFmr5TW6mvahzvmrK4a6bqWGfCevBflP+Xw==
+
+react-icons@^3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.9.0.tgz#89a00f20a0e02e6bfd899977eaf46eb4624239d5"
+  integrity sha512-gKbYKR+4QsD3PmIHLAM9TDDpnaTsr3XZeK1NTAb6WQQ+gxEdJ0xuCgLq0pxXdS7Utg2AIpcVhM1ut/jlDhcyNg==
+  dependencies:
+    camelcase "^5.0.0"
 
 react-is@^16.10.2, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.6, react-is@^16.9.0:
   version "16.12.0"

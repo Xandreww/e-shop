@@ -1,32 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Navbar, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap';
+import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
+import { FiShoppingCart } from 'react-icons/fi';
+import { IoIosArrowDown } from 'react-icons/io';
+import profileImage from '../../../images/profilePhoto.png';
 
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
-// import styles from './Header.module.scss';
+import styles from './Header.module.scss';
 
 const Component = ({ children }) => (
   <Navbar bg="light" expand="lg">
-    <Navbar.Brand href="#home">E-shop</Navbar.Brand>
-    <Form inline>
-      <FormControl type="text" placeholder="What are you looking for?" className="mr-sm-2" />
-    </Form>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="mr-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#link">Link</Nav.Link>
-        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-        </NavDropdown>
-      </Nav>
-    </Navbar.Collapse>
+    <div className={styles.navbar}>
+      <Navbar.Brand href="#home" className={styles.brand}>
+        <p>E-shop</p>
+      </Navbar.Brand>
+      <Form inline>
+        <FormControl type="text" placeholder="What are you looking for?" className={styles.search} />
+      </Form>
+      <div className={styles.rightSide}>
+        <Button as="a" href="#" className={styles.cartButton}>
+          <FiShoppingCart className={styles.cartIcon} />
+        </Button>
+        <Button className={styles.profileButton}>
+          <img src={profileImage} alt="profile" />
+          <p>Hi, John!</p>
+          <IoIosArrowDown className={styles.arrowIcon} />
+        </Button>
+      </div>
+    </div>
   </Navbar>
 );
 
