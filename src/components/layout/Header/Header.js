@@ -4,6 +4,7 @@ import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
 import { FiShoppingCart } from 'react-icons/fi';
 import { IoIosArrowDown } from 'react-icons/io';
 import profileImage from '../../../images/profilePhoto.png';
+import { Link } from 'react-router-dom';
 
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
@@ -13,7 +14,7 @@ import styles from './Header.module.scss';
 const Component = ({ children }) => (
   <Navbar bg="light" expand="lg">
     <div className={styles.navbar}>
-      <Navbar.Brand href="#home" className={styles.brand}>
+      <Navbar.Brand component={Link} to="/" href="#home" className={styles.brand}>
         <p>E-shop</p>
       </Navbar.Brand>
       <Form inline>
