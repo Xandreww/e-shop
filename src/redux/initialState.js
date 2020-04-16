@@ -15,7 +15,7 @@ export const initialState = {
         id: '1',
         name: 'Xbox',
         image: xbox,
-        availability: 'available',
+        available: true,
         price: 200,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
@@ -30,7 +30,7 @@ export const initialState = {
         id: '2',
         name: 'Play Station',
         image: ps,
-        availability: 'available',
+        available: true,
         price: 200,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
@@ -45,7 +45,7 @@ export const initialState = {
         id: '3',
         name: 'MacBook',
         image: macbook,
-        availability: 'available',
+        available: true,
         price: 1200,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
@@ -60,7 +60,7 @@ export const initialState = {
         id: '4',
         name: 'Gaming Mouse',
         image: mouse,
-        availability: 'available',
+        available: true,
         price: 20,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
@@ -75,7 +75,7 @@ export const initialState = {
         id: '5',
         name: 'Iphone 11',
         image: iphone11,
-        availability: 'available',
+        available: true,
         price: 1000,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
@@ -90,7 +90,7 @@ export const initialState = {
         id: '6',
         name: 'IPad',
         image: ipad,
-        availability: 'available',
+        available: true,
         price: 400,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
@@ -105,7 +105,7 @@ export const initialState = {
         id: '7',
         name: 'Nintendo Switch',
         image: nintendoswitch,
-        availability: 'available',
+        available: true,
         price: 250,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
@@ -121,7 +121,7 @@ export const initialState = {
         name: 'Gaming Headphones',
         image: headphones,
         price: 50,
-        availability: 'available',
+        available: true,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem.`,
@@ -135,7 +135,7 @@ export const initialState = {
         id: '9',
         name: 'Samsung Fold',
         image: fold,
-        availability: 'available',
+        available: true,
         price: 2000,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non

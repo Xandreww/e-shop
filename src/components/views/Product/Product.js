@@ -25,21 +25,29 @@ class Component extends React.Component {
         </div>
         <div className={styles.right}>
           <h1>{product.name}</h1>
-          <p>{product.availability}</p>
+          {product.available ? (
+            <p className={styles.available}>Available</p>
+          ) : (
+            <p className={styles.notAvailable}>Product temporarily not available</p>
+          )}
           <div className={styles.rating}>
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaRegStar />
+            <FaStar className={styles.icon} />
+            <FaStar className={styles.icon} />
+            <FaStar className={styles.icon} />
+            <FaStar className={styles.icon} />
+            <FaRegStar className={styles.icon} />
           </div>
           <p className={styles.description}>{product.descriptionFull}</p>
-          <div>
-            <IoMdAdd />
+          <div className={styles.addRemove}>
+            <Button className={styles.addButton}>
+              <IoMdAdd className={styles.icon} />
+            </Button>
             <p>1</p>
-            <IoMdRemove />
+            <Button className={styles.removeButton}>
+              <IoMdRemove className={styles.icon} />
+            </Button>
+            <Button className={styles.addToCart}>Add to cart</Button>
           </div>
-          <Button>Add to cart</Button>
         </div>
       </div>
     );

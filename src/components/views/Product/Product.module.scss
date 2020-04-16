@@ -3,13 +3,79 @@
 .root {
   display: flex;
   flex-direction: row;
+  margin: 50px 0;
+
+  .icon {
+    vertical-align: inherit;
+  }
 
   .left,
   .right {
     flex: 50%;
   }
 
+  .left {
+    margin-right: 30px;
+  }
+
+  .right {
+    margin-left: 30px;
+  }
+
   img {
     width: 100%;
+  }
+
+  .available {
+    color: green;
+  }
+
+  .rating {
+    margin-bottom: 20px;
+  }
+
+  .notAvailable {
+    color: red;
+  }
+
+  .addRemove {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .addButton,
+    .removeButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 35px;
+      background: transparent;
+      color: black;
+      border-color: blue;
+
+      &:hover {
+        background-color: lightskyblue;
+      }
+    }
+
+    .addButton {
+      margin-right: 15px;
+    }
+
+    .addToCart {
+      background-color: blue;
+
+      &:hover {
+        background-color: lightskyblue;
+      }
+    }
+
+    .removeButton {
+      margin: 0 30px 0 15px;
+    }
+
+    p {
+      margin: 0;
+    }
   }
 }
