@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 import { IoIosPricetag } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { getAll } from '../../../redux/productsRedux';
@@ -19,15 +20,17 @@ class Component extends React.Component {
     return (
       <div className={styles.root}>
         {products.map((product) => (
-          <Card key={product.id} className={styles.card}>
+          <Card key={product.id} className={styles.card} as={Link} to={`/product/${product.id}`}>
             <Card.Img variant="top" src={product.image} className={styles.image} />
             <Card.Body className={styles.cardBody}>
               <Card.Title>{product.name}</Card.Title>
-              <Card.Text>{product.descriptionShort}</Card.Text>
+              <Card.Text className={styles.description}>{product.descriptionShort}</Card.Text>
+              {/* <div className={styles.div}> */}
               <Button variant="primary" className={styles.priceButton}>
                 <IoIosPricetag className={styles.priceTag} />
                 {product.price}
               </Button>
+              {/* </div> */}
             </Card.Body>
           </Card>
         ))}

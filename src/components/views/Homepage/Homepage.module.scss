@@ -9,6 +9,15 @@
     flex: 30%;
     margin: 10px;
     max-height: 650px;
+    text-decoration: none;
+    color: inherit;
+    z-index: 50;
+
+    &:hover {
+      background-color: lightskyblue;
+      border-color: black;
+      // transition: 250ms ease-in-out;
+    }
   }
 
   .cardBody {
@@ -24,12 +33,13 @@
     border: none;
 
     &:hover {
-      background-color: lightskyblue;
+      background-color: black;
+      // transition: 250ms ease-in-out;
     }
-  }
 
-  .priceTag {
-    margin-right: 5px;
+    .priceTag {
+      margin-right: 5px;
+    }
   }
 
   .image {
