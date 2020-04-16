@@ -1,4 +1,15 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  display: flex;
+  flex-direction: row;
+
+  .left,
+  .right {
+    flex: 50%;
+  }
+
+  img {
+    width: 100%;
+  }
+}

@@ -1,5 +1,11 @@
 /* selectors */
 export const getAll = ({ products }) => products.data;
+export const getSingleProduct = ({ products }, productId) => {
+  const filtered = products.data.filter((product) => product.id === productId);
+  // console.log('selector - products:', products);
+  // console.log('selector - productId:', typeof productId);
+  return filtered.length ? filtered[0] : { error: true };
+};
 
 /* action name creator */
 const reducerName = 'products';

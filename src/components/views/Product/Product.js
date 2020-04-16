@@ -1,27 +1,31 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import xbox from '../../../images/xbox.jpg';
+import PropTypes from 'prop-types';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import { IoMdAdd, IoMdRemove } from 'react-icons/io';
 import { Button } from 'react-bootstrap';
 
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
+import { connect } from 'react-redux';
+import { getSingleProduct } from '../../../redux/productsRedux';
 
 import styles from './Product.module.scss';
 
 class Component extends React.Component {
-  // static propTypes = {};
+  static propTypes = {
+    product: PropTypes.object,
+    match: PropTypes.object,
+  };
 
   render() {
+    const { product } = this.props;
+
     return (
       <div className={styles.root}>
         <div className={styles.left}>
-          <img src={xbox} alt="product"></img>
+          <img src={product.image} alt="product"></img>
         </div>
         <div className={styles.right}>
-          <h1>Produt name</h1>
-          <p>Product available</p>
+          <h1>{product.name}</h1>
+          <p>{product.availability}</p>
           <div className={styles.rating}>
             <FaStar />
             <FaStar />
@@ -29,13 +33,7 @@ class Component extends React.Component {
             <FaStar />
             <FaRegStar />
           </div>
-          <p className={styles.description}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
-            primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
-            id sem. Nam et pellentesque dui. Nunc facilisis porta leo, sit amet sollicitudin tellus. Ut bibendum scelerisque tortor, ut
-            lacinia arcu dignissim eget. Vestibulum suscipit massa vitae enim porta elementum. Pellentesque non mi id arcu cursus posuere
-            vel vitae erat.
-          </p>
+          <p className={styles.description}>{product.descriptionFull}</p>
           <div>
             <IoMdAdd />
             <p>1</p>
@@ -48,18 +46,14 @@ class Component extends React.Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
+const mapStateToProps = (state, props) => ({
+  product: getSingleProduct(state, props.match.params.id),
+});
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
-
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+const Container = connect(mapStateToProps)(Component);
 
 export {
-  Component as Product,
-  // Container as Product,
+  // Component as Product,
+  Container as Product,
   Component as ProductComponent,
 };

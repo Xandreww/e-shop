@@ -25,12 +25,10 @@ class Component extends React.Component {
             <Card.Body className={styles.cardBody}>
               <Card.Title>{product.name}</Card.Title>
               <Card.Text className={styles.description}>{product.descriptionShort}</Card.Text>
-              {/* <div className={styles.div}> */}
               <Button variant="primary" className={styles.priceButton}>
                 <IoIosPricetag className={styles.priceTag} />
                 {product.price}
               </Button>
-              {/* </div> */}
             </Card.Body>
           </Card>
         ))}
