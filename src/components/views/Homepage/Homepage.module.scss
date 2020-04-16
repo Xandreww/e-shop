@@ -1,8 +1,39 @@
 @import '../../../styles/settings.scss';
 
 .root {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 0;
+
+  .card {
+    flex: 30%;
+    margin: 10px;
+    max-height: 650px;
+  }
+
+  .cardBody {
+    height: 100%;
+  }
+
+  .priceButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: black;
+    border: none;
+
+    &:hover {
+      background-color: lightskyblue;
+    }
+  }
+
+  .priceTag {
+    margin-right: 5px;
+  }
+
   .image {
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    max-height: 55%;
   }
 }

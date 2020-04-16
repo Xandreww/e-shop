@@ -6,16 +6,21 @@ import iphone11 from '../images/iphone11.jpg';
 import ipad from '../images/ipad.jpg';
 import headphones from '../images/headphones.jpg';
 import fold from '../images/fold.jpg';
+import nintendoswitch from '../images/switch.jpg';
 
 export const initialState = {
-  producta: {
+  products: {
     data: [
       {
         id: '1',
         name: 'Xbox',
         image: xbox,
         availability: 'available',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        price: 200,
+        descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
+        id sem.`,
+        descriptionFull: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem. Nam et pellentesque dui. Nunc facilisis porta leo, sit amet sollicitudin tellus. Ut bibendum scelerisque tortor, ut
         lacinia arcu dignissim eget. Vestibulum suscipit massa vitae enim porta elementum. Pellentesque non mi id arcu cursus posuere
@@ -26,7 +31,11 @@ export const initialState = {
         name: 'Play Station',
         image: ps,
         availability: 'available',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        price: 200,
+        descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
+        id sem.`,
+        descriptionFull: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem. Nam et pellentesque dui. Nunc facilisis porta leo, sit amet sollicitudin tellus. Ut bibendum scelerisque tortor, ut
         lacinia arcu dignissim eget. Vestibulum suscipit massa vitae enim porta elementum. Pellentesque non mi id arcu cursus posuere
@@ -37,7 +46,11 @@ export const initialState = {
         name: 'MacBook',
         image: macbook,
         availability: 'available',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        price: 1200,
+        descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
+        id sem.`,
+        descriptionFull: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem. Nam et pellentesque dui. Nunc facilisis porta leo, sit amet sollicitudin tellus. Ut bibendum scelerisque tortor, ut
         lacinia arcu dignissim eget. Vestibulum suscipit massa vitae enim porta elementum. Pellentesque non mi id arcu cursus posuere
@@ -48,7 +61,11 @@ export const initialState = {
         name: 'Gaming Mouse',
         image: mouse,
         availability: 'available',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        price: 20,
+        descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
+        id sem.`,
+        descriptionFull: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem. Nam et pellentesque dui. Nunc facilisis porta leo, sit amet sollicitudin tellus. Ut bibendum scelerisque tortor, ut
         lacinia arcu dignissim eget. Vestibulum suscipit massa vitae enim porta elementum. Pellentesque non mi id arcu cursus posuere
@@ -59,7 +76,11 @@ export const initialState = {
         name: 'Iphone 11',
         image: iphone11,
         availability: 'available',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        price: 1000,
+        descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
+        id sem.`,
+        descriptionFull: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem. Nam et pellentesque dui. Nunc facilisis porta leo, sit amet sollicitudin tellus. Ut bibendum scelerisque tortor, ut
         lacinia arcu dignissim eget. Vestibulum suscipit massa vitae enim porta elementum. Pellentesque non mi id arcu cursus posuere
@@ -70,7 +91,11 @@ export const initialState = {
         name: 'IPad',
         image: ipad,
         availability: 'available',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        price: 400,
+        descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
+        id sem.`,
+        descriptionFull: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem. Nam et pellentesque dui. Nunc facilisis porta leo, sit amet sollicitudin tellus. Ut bibendum scelerisque tortor, ut
         lacinia arcu dignissim eget. Vestibulum suscipit massa vitae enim porta elementum. Pellentesque non mi id arcu cursus posuere
@@ -78,10 +103,14 @@ export const initialState = {
       },
       {
         id: '7',
-        name: 'Gaming Mouse',
-        image: mouse,
+        name: 'Nintendo Switch',
+        image: nintendoswitch,
         availability: 'available',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        price: 250,
+        descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
+        id sem.`,
+        descriptionFull: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem. Nam et pellentesque dui. Nunc facilisis porta leo, sit amet sollicitudin tellus. Ut bibendum scelerisque tortor, ut
         lacinia arcu dignissim eget. Vestibulum suscipit massa vitae enim porta elementum. Pellentesque non mi id arcu cursus posuere
@@ -91,8 +120,12 @@ export const initialState = {
         id: '8',
         name: 'Gaming Headphones',
         image: headphones,
+        price: 50,
         availability: 'available',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
+        id sem.`,
+        descriptionFull: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem. Nam et pellentesque dui. Nunc facilisis porta leo, sit amet sollicitudin tellus. Ut bibendum scelerisque tortor, ut
         lacinia arcu dignissim eget. Vestibulum suscipit massa vitae enim porta elementum. Pellentesque non mi id arcu cursus posuere
@@ -103,7 +136,11 @@ export const initialState = {
         name: 'Samsung Fold',
         image: fold,
         availability: 'available',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        price: 2000,
+        descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
+        id sem.`,
+        descriptionFull: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem. Nam et pellentesque dui. Nunc facilisis porta leo, sit amet sollicitudin tellus. Ut bibendum scelerisque tortor, ut
         lacinia arcu dignissim eget. Vestibulum suscipit massa vitae enim porta elementum. Pellentesque non mi id arcu cursus posuere

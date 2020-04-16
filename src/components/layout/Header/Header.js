@@ -18,7 +18,7 @@ const Component = ({ children }) => (
         <p>E-shop</p>
       </Navbar.Brand>
       <Form inline>
-        <FormControl type="text" placeholder="What are you looking for?" className={styles.search} />
+        <FormControl type="text" placeholder="Hello, what are you looking for?" className={styles.search} />
       </Form>
       <div className={styles.rightSide}>
         <Button as="a" href="#" className={styles.cartButton}>
