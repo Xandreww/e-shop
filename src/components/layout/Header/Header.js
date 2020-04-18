@@ -14,7 +14,7 @@ import styles from './Header.module.scss';
 const Component = ({ children }) => (
   <Navbar bg="light" expand="lg">
     <div className={styles.navbar}>
-      <Navbar.Brand component={Link} to="/" href="#home" className={styles.brand}>
+      <Navbar.Brand as={Link} to="/" className={styles.brand}>
         <p>E-shop</p>
       </Navbar.Brand>
       <Form inline>
