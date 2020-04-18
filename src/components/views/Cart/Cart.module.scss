@@ -1,4 +1,75 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  margin: 50px 0;
+
+  .td {
+    vertical-align: middle;
+  }
+
+  .imageColumn {
+    width: 60px;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+
+  .summary {
+    border: 1px solid #dee2e6;
+  }
+
+  .prices {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .leftSummary,
+  .rightSummary {
+    width: 25%;
+  }
+
+  .rightSummary {
+    text-align: right;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .buttonLeft,
+  .buttonRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .arrowLeft,
+  .buttonLeft {
+    margin-right: 20px;
+  }
+
+  .arrowRight,
+  .buttonRight {
+    margin-left: 20px;
+  }
+
+  .info {
+    margin: 10px;
+    border-bottom: 1px solid #dee2e6;
+  }
+}

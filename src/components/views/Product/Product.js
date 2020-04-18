@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FaStar, FaRegStar } from 'react-icons/fa';
-import { IoMdAdd, IoMdRemove } from 'react-icons/io';
 import { Button } from 'react-bootstrap';
+import { AddRemoveButton } from '../../features/AddRemoveButton/AddRemoveButton';
 
 import { connect } from 'react-redux';
 import { getSingleProduct } from '../../../redux/productsRedux';
@@ -39,13 +39,7 @@ class Component extends React.Component {
           </div>
           <p className={styles.description}>{product.descriptionFull}</p>
           <div className={styles.addRemove}>
-            <Button className={styles.addButton}>
-              <IoMdAdd className={styles.icon} />
-            </Button>
-            <p>1</p>
-            <Button className={styles.removeButton}>
-              <IoMdRemove className={styles.icon} />
-            </Button>
+            <AddRemoveButton number={1} />
             <Button className={styles.addToCart}>Add to cart</Button>
           </div>
         </div>

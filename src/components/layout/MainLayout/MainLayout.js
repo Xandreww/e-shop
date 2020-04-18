@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 
 import styles from './MainLayout.module.scss';
 
-const Component = ({ className, children }) => (
+const Component = ({ children }) => (
   <div className={styles.root}>
     <Header />
     <Container>{children}</Container>
