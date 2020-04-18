@@ -43,6 +43,7 @@
     align-items: center;
     width: 50%;
     margin: 0 auto;
+    margin-top: 20px;
   }
 
   .buttonLeft,
@@ -71,5 +72,19 @@
   .info {
     margin: 10px;
     border-bottom: 1px solid #dee2e6;
+  }
+
+  .buttonRight {
+    &:hover {
+      background-color: greenyellow;
+      color: black;
+    }
+  }
+
+  .buttonLeft {
+    &:hover {
+      background-color: lightskyblue;
+      color: black;
+    }
   }
 }

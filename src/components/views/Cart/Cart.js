@@ -63,7 +63,7 @@ class Component extends React.Component {
               <FaArrowCircleLeft className={styles.arrowLeft} />
               <p>Continue shopping</p>
             </Button>
-            <Button as={Link} to="/" className={styles.buttonRight}>
+            <Button as={Link} to="/Form" className={styles.buttonRight}>
               <p>Make order</p>
               <FaArrowCircleRight className={styles.arrowRight} />
             </Button>

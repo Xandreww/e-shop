@@ -8,6 +8,7 @@ import { store } from './redux/store';
 import { MainLayout } from './components/layout/MainLayout/MainLayout';
 import { Homepage } from './components/views/Homepage/Homepage';
 import { Cart } from './components/views/Cart/Cart';
+import { Form } from './components/views/Form/Form';
 import { NotFound } from './components/views/NotFound/NotFound';
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/cart" component={Cart} />
+          <Route exact path="/form" component={Form} />
           <Route exact path="/product/:id" component={Product} />
           <Route path="*" component={NotFound} />
         </Switch>
