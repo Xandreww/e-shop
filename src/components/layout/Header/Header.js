@@ -21,7 +21,7 @@ const Component = ({ children }) => (
         <FormControl type="text" placeholder="Hello, what are you looking for?" className={styles.search} />
       </Form>
       <div className={styles.rightSide}>
-        <Button as="a" href="#" className={styles.cartButton}>
+        <Button as={Link} to="/Cart" className={styles.cartButton}>
           <FiShoppingCart className={styles.cartIcon} />
           <p className={styles.number}>10</p>
         </Button>

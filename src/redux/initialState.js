@@ -147,6 +147,18 @@ export const initialState = {
         vel vitae erat.`,
       },
     ],
+    cart: [
+      {
+        id: '1',
+        name: 'Xbox',
+        price: 200,
+      },
+      {
+        id: '2',
+        name: 'Play Station',
+        price: 200,
+      },
+    ],
     loading: {
       active: false,
       error: false,
