@@ -1,4 +1,12 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  margin: 50px 0;
+
+  .submitButton {
+    &:hover {
+      background-color: greenyellow;
+      color: black;
+    }
+  }
+}
