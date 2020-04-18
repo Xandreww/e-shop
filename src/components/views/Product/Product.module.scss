@@ -56,6 +56,11 @@
       &:hover {
         background-color: lightskyblue;
       }
+
+      &:focus {
+        box-shadow: none;
+        background-color: transparent;
+      }
     }
 
     .addButton {
@@ -67,6 +72,13 @@
 
       &:hover {
         background-color: lightskyblue;
+      }
+
+      &:focus {
+        box-shadow: none;
+        background-color: transparent;
+        border-color: black;
+        background-color: blue;
       }
     }
 

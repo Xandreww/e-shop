@@ -16,6 +16,16 @@
     justify-content: center;
     align-items: center;
 
+    &:active {
+      background-color: #0062cc;
+      border-color: #005cbf;
+      box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+
+      p {
+        color: white;
+      }
+    }
+
     p {
       margin: 0;
     }
@@ -47,6 +57,21 @@
       background-color: lightskyblue;
     }
 
+    &:active {
+      box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+
+      .cartIcon,
+      p {
+        color: white;
+      }
+    }
+
+    &:focus {
+      box-shadow: none;
+      background-color: transparent;
+      border-color: black;
+    }
+
     .cartIcon {
       font-size: 25px;
       color: black;
@@ -70,6 +95,12 @@
 
     &:hover {
       background-color: lightskyblue;
+    }
+
+    &:focus {
+      box-shadow: none;
+      background-color: transparent;
+      border-color: black;
     }
 
     img {
