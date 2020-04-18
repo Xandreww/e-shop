@@ -23,6 +23,7 @@ const Component = ({ children }) => (
       <div className={styles.rightSide}>
         <Button as="a" href="#" className={styles.cartButton}>
           <FiShoppingCart className={styles.cartIcon} />
+          <p className={styles.number}>10</p>
         </Button>
         <Button className={styles.profileButton}>
           <img src={profileImage} alt="profile" />
