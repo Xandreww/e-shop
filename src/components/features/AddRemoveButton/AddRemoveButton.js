@@ -3,41 +3,62 @@ import PropTypes from 'prop-types';
 import { IoMdAdd, IoMdRemove } from 'react-icons/io';
 import { Button } from 'react-bootstrap';
 
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
+import { connect } from 'react-redux';
+import { increaseAmount, decreaseAmount } from '../../../redux/productsRedux';
 
 import styles from './AddRemoveButton.module.scss';
 
-const Component = ({ number }) => (
-  <div className={styles.root}>
-    <div className={styles.addRemove}>
-      <Button className={styles.addButton}>
-        <IoMdAdd className={styles.icon} />
-      </Button>
-      <p>{number}</p>
-      <Button className={styles.removeButton}>
-        <IoMdRemove className={styles.icon} />
-      </Button>
-    </div>
-  </div>
-);
+class Component extends React.Component {
+  static propTypes = {
+    increaseAmount: PropTypes.func,
+    decreaseAmount: PropTypes.func,
+    product: PropTypes.object,
+  };
 
-Component.propTypes = {
-  number: PropTypes.number,
-};
+  increaseHandler = () => {
+    this.props.increaseAmount(this.props.product);
+  };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
+  decreaseHandler = () => {
+    const { product, decreaseAmount } = this.props;
+    if (product.amount > 1) {
+      decreaseAmount(product);
+    }
+  };
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+  render() {
+    const { product } = this.props;
+    const { increaseHandler, decreaseHandler } = this;
 
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+    return (
+      <div className={styles.root}>
+        <div className={styles.addRemove}>
+          <Button className={styles.addButton} onClick={increaseHandler}>
+            <IoMdAdd className={styles.icon} />
+          </Button>
+          <p>{product.amount}</p>
+          <Button className={styles.removeButton} onClick={decreaseHandler}>
+            <IoMdRemove className={styles.icon} />
+          </Button>
+        </div>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state, props) => ({
+  // product: getSingleProduct(state, props.match.params.id),
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  increaseAmount: (payload) => dispatch(increaseAmount(payload)),
+  decreaseAmount: (payload) => dispatch(decreaseAmount(payload)),
+});
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as AddRemoveButton,
-  // Container as AddRemoveButton,
+  // Component as AddRemoveButton,
+  Container as AddRemoveButton,
   Component as AddRemoveButtonComponent,
 };

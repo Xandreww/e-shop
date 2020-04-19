@@ -16,6 +16,8 @@ const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
 const FETCH_ERROR = createActionName('FETCH_ERROR');
 const ADD_TO_CART = createActionName('ADD_TO_CART');
 const REMOVE_FROM_CART = createActionName('REMOVE_FROM_CART');
+const INCREASE_AMOUNT = createActionName('INCREASE_AMOUNT');
+const DECREASE_AMOUNT = createActionName('DECREASE_AMOUNT');
 
 /* action creators */
 export const fetchStarted = (payload) => ({ payload, type: FETCH_START });
@@ -23,6 +25,8 @@ export const fetchSuccess = (payload) => ({ payload, type: FETCH_SUCCESS });
 export const fetchError = (payload) => ({ payload, type: FETCH_ERROR });
 export const addToCart = (payload) => ({ payload, type: ADD_TO_CART });
 export const removeFromCart = (payload) => ({ payload, type: REMOVE_FROM_CART });
+export const increaseAmount = (payload) => ({ payload, type: INCREASE_AMOUNT });
+export const decreaseAmount = (payload) => ({ payload, type: DECREASE_AMOUNT });
 
 /* thunk creators */
 
@@ -68,12 +72,31 @@ export const reducer = (statePart = [], action = {}) => {
         },
       };
     }
-    case REMOVE_FROM_CART:
+    case REMOVE_FROM_CART: {
       console.log('REMOVE_FROM_CART', action.payload);
       return {
         ...statePart,
         cart: statePart.cart.filter((product) => product.id !== action.payload),
       };
+    }
+    case INCREASE_AMOUNT: {
+      console.log('INCREASE_AMOUNT', action.payload);
+      return {
+        ...statePart,
+        cart: statePart.cart.map((product) =>
+          product.id === action.payload.id ? { ...product, amount: action.payload.amount + 1 } : product,
+        ),
+      };
+    }
+    case DECREASE_AMOUNT: {
+      console.log('DECREASE_AMOUNT', action.payload);
+      return {
+        ...statePart,
+        cart: statePart.cart.map((product) =>
+          product.id === action.payload.id ? { ...product, amount: action.payload.amount - 1 } : product,
+        ),
+      };
+    }
     default:
       return statePart;
   }

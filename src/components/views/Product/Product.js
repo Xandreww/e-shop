@@ -2,11 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import { Button } from 'react-bootstrap';
-import { AddRemoveButton } from '../../features/AddRemoveButton/AddRemoveButton';
 
-import { addToCart } from '../../../redux/productsRedux';
 import { connect } from 'react-redux';
-import { getSingleProduct } from '../../../redux/productsRedux';
+import { getSingleProduct, addToCart } from '../../../redux/productsRedux';
 
 import styles from './Product.module.scss';
 
@@ -46,7 +44,6 @@ class Component extends React.Component {
           </div>
           <p className={styles.description}>{product.descriptionFull}</p>
           <div className={styles.addRemove}>
-            <AddRemoveButton number={1} />
             <Button className={styles.addToCart} onClick={addToCartHandler}>
               Add to cart
             </Button>

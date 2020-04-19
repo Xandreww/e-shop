@@ -17,6 +17,7 @@ export const initialState = {
         image: xbox,
         available: true,
         price: 200,
+        amount: 1,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem.`,
@@ -32,6 +33,7 @@ export const initialState = {
         image: ps,
         available: true,
         price: 200,
+        amount: 1,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem.`,
@@ -47,6 +49,7 @@ export const initialState = {
         image: macbook,
         available: true,
         price: 1200,
+        amount: 1,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem.`,
@@ -62,6 +65,7 @@ export const initialState = {
         image: mouse,
         available: true,
         price: 20,
+        amount: 1,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem.`,
@@ -77,6 +81,7 @@ export const initialState = {
         image: iphone11,
         available: true,
         price: 1000,
+        amount: 1,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem.`,
@@ -92,6 +97,7 @@ export const initialState = {
         image: ipad,
         available: true,
         price: 400,
+        amount: 1,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem.`,
@@ -107,6 +113,7 @@ export const initialState = {
         image: nintendoswitch,
         available: true,
         price: 250,
+        amount: 1,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem.`,
@@ -121,7 +128,7 @@ export const initialState = {
         name: 'Gaming Headphones',
         image: headphones,
         price: 50,
-        available: true,
+        amount: 1,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem.`,
@@ -137,6 +144,7 @@ export const initialState = {
         image: fold,
         available: true,
         price: 2000,
+        amount: 1,
         descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
         primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
         id sem.`,
@@ -148,20 +156,38 @@ export const initialState = {
       },
     ],
     cart: [
-      // {
-      //   id: '1',
-      //   name: 'Xbox',
-      //   image: xbox,
-      //   price: 200,
-      //   amount: 1,
-      // },
-      // {
-      //   id: '2',
-      //   name: 'Play Station',
-      //   image: ps,
-      //   price: 200,
-      //   amount: 1,
-      // },
+      {
+        id: '1',
+        name: 'Xbox',
+        image: xbox,
+        available: true,
+        price: 200,
+        amount: 3,
+        descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
+        id sem.`,
+        descriptionFull: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
+        id sem. Nam et pellentesque dui. Nunc facilisis porta leo, sit amet sollicitudin tellus. Ut bibendum scelerisque tortor, ut
+        lacinia arcu dignissim eget. Vestibulum suscipit massa vitae enim porta elementum. Pellentesque non mi id arcu cursus posuere
+        vel vitae erat.`,
+      },
+      {
+        id: '2',
+        name: 'Play Station',
+        image: ps,
+        available: true,
+        price: 200,
+        amount: 2,
+        descriptionShort: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
+        id sem.`,
+        descriptionFull: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nibh id ex sollicitudin tincidunt. Vestibulum ante ipsum
+        primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus sit amet sem nec turpis consectetur pellentesque non
+        id sem. Nam et pellentesque dui. Nunc facilisis porta leo, sit amet sollicitudin tellus. Ut bibendum scelerisque tortor, ut
+        lacinia arcu dignissim eget. Vestibulum suscipit massa vitae enim porta elementum. Pellentesque non mi id arcu cursus posuere
+        vel vitae erat.`,
+      },
     ],
     loading: {
       active: false,

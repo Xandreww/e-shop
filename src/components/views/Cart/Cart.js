@@ -19,8 +19,6 @@ class Component extends React.Component {
   };
 
   removeFromCartHandler = (product, event) => {
-    console.log('clicked!');
-    console.log('product:', product.id);
     this.props.removeFromCart(product.id);
   };
 
@@ -50,7 +48,7 @@ class Component extends React.Component {
                 <td className={styles.td}>{product.price}</td>
                 <td className={styles.td}>{product.price}</td>
                 <td className={styles.td}>
-                  <AddRemoveButton number={product.amount} />
+                  <AddRemoveButton product={product} />
                 </td>
                 <td className={styles.td}>
                   <Button className={styles.removeButton} onClick={(event) => removeFromCartHandler(product, event)}>
