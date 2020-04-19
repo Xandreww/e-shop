@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import { Button } from 'react-bootstrap';
 import { AddRemoveButton } from '../../features/AddRemoveButton/AddRemoveButton';
-import { addToCart } from '../../../redux/productsRedux';
 
+import { addToCart } from '../../../redux/productsRedux';
 import { connect } from 'react-redux';
 import { getSingleProduct } from '../../../redux/productsRedux';
 

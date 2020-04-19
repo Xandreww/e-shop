@@ -4,7 +4,9 @@ import { Table, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AddRemoveButton } from '../../features/AddRemoveButton/AddRemoveButton';
 import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
+import { MdRemoveShoppingCart } from 'react-icons/md';
 
+import { removeFromCart } from '../../../redux/productsRedux';
 import { connect } from 'react-redux';
 import { getCart } from '../../../redux/productsRedux';
 
@@ -13,10 +15,18 @@ import styles from './Cart.module.scss';
 class Component extends React.Component {
   static propTypes = {
     products: PropTypes.array,
+    removeFromCart: PropTypes.func,
+  };
+
+  removeFromCartHandler = (product, event) => {
+    console.log('clicked!');
+    console.log('product:', product.id);
+    this.props.removeFromCart(product.id);
   };
 
   render() {
     const { products } = this.props;
+    const { removeFromCartHandler } = this;
 
     return (
       <div className={styles.root}>
@@ -27,6 +37,7 @@ class Component extends React.Component {
               <th>Unit price</th>
               <th>Value</th>
               <th>Amount</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -40,6 +51,11 @@ class Component extends React.Component {
                 <td className={styles.td}>{product.price}</td>
                 <td className={styles.td}>
                   <AddRemoveButton number={product.amount} />
+                </td>
+                <td className={styles.td}>
+                  <Button className={styles.removeButton} onClick={(event) => removeFromCartHandler(product, event)}>
+                    <MdRemoveShoppingCart className={styles.removeIcon} />
+                  </Button>
                 </td>
               </tr>
             ))}
@@ -78,7 +94,11 @@ const mapStateToProps = (state) => ({
   products: getCart(state),
 });
 
-const Container = connect(mapStateToProps)(Component);
+const mapDispatchToProps = (dispatch) => ({
+  removeFromCart: (payload) => dispatch(removeFromCart(payload)),
+});
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
   // Component as Homepage,

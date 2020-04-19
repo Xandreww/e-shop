@@ -87,4 +87,22 @@
       color: black;
     }
   }
+
+  .removeButton {
+    background-color: white;
+    border: 1px solid blue;
+
+    &:hover {
+      background-color: red;
+      border: 1px solid red;
+
+      .removeIcon {
+        color: white;
+      }
+    }
+
+    .removeIcon {
+      color: black;
+    }
+  }
 }
