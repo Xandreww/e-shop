@@ -14,6 +14,9 @@ const createActionName = (name) => `app/${reducerName}/${name}`;
 const FETCH_START = createActionName('FETCH_START');
 const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
 const FETCH_ERROR = createActionName('FETCH_ERROR');
+const ADD_TO_CART = createActionName('ADD_TO_CART');
+
+export const addToCart = (payload) => ({ payload, type: ADD_TO_CART });
 
 /* action creators */
 export const fetchStarted = (payload) => ({ payload, type: FETCH_START });
@@ -50,6 +53,18 @@ export const reducer = (statePart = [], action = {}) => {
         loading: {
           active: false,
           error: action.payload,
+        },
+      };
+    }
+    case ADD_TO_CART: {
+      console.log('statePart', statePart);
+      console.log('action.payload', action.payload);
+      return {
+        ...statePart,
+        cart: [...statePart.cart, action.payload],
+        loading: {
+          active: false,
+          error: false,
         },
       };
     }

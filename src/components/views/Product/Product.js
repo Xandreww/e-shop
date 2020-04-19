@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import { Button } from 'react-bootstrap';
 import { AddRemoveButton } from '../../features/AddRemoveButton/AddRemoveButton';
+import { addToCart } from '../../../redux/productsRedux';
 
 import { connect } from 'react-redux';
 import { getSingleProduct } from '../../../redux/productsRedux';
@@ -13,10 +14,16 @@ class Component extends React.Component {
   static propTypes = {
     product: PropTypes.object,
     match: PropTypes.object,
+    addToCart: PropTypes.func,
+  };
+
+  addToCartHandler = () => {
+    this.props.addToCart(this.props.product);
   };
 
   render() {
     const { product } = this.props;
+    const { addToCartHandler } = this;
 
     return (
       <div className={styles.root}>
@@ -40,7 +47,9 @@ class Component extends React.Component {
           <p className={styles.description}>{product.descriptionFull}</p>
           <div className={styles.addRemove}>
             <AddRemoveButton number={1} />
-            <Button className={styles.addToCart}>Add to cart</Button>
+            <Button className={styles.addToCart} onClick={addToCartHandler}>
+              Add to cart
+            </Button>
           </div>
         </div>
       </div>
@@ -52,7 +61,11 @@ const mapStateToProps = (state, props) => ({
   product: getSingleProduct(state, props.match.params.id),
 });
 
-const Container = connect(mapStateToProps)(Component);
+const mapDispatchToProps = (dispatch) => ({
+  addToCart: (payload) => dispatch(addToCart(payload)),
+});
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
   // Component as Product,

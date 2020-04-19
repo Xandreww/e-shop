@@ -148,20 +148,20 @@ export const initialState = {
       },
     ],
     cart: [
-      {
-        id: '1',
-        name: 'Xbox',
-        image: xbox,
-        price: 200,
-        amount: 1,
-      },
-      {
-        id: '2',
-        name: 'Play Station',
-        image: ps,
-        price: 200,
-        amount: 1,
-      },
+      // {
+      //   id: '1',
+      //   name: 'Xbox',
+      //   image: xbox,
+      //   price: 200,
+      //   amount: 1,
+      // },
+      // {
+      //   id: '2',
+      //   name: 'Play Station',
+      //   image: ps,
+      //   price: 200,
+      //   amount: 1,
+      // },
     ],
     loading: {
       active: false,
