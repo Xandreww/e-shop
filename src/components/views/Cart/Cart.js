@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { EmptyCart } from '../EmptyCart/EmptyCart';
+
 import { Table, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AddRemoveButton } from '../../features/AddRemoveButton/AddRemoveButton';

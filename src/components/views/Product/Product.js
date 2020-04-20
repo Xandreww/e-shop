@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NoProduct } from '../NoProduct/NoProduct';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import { Button } from 'react-bootstrap';
 
@@ -25,30 +26,36 @@ class Component extends React.Component {
 
     return (
       <div className={styles.root}>
-        <div className={styles.left}>
-          <img src={product.image} alt="product"></img>
-        </div>
-        <div className={styles.right}>
-          <h1>{product.name}</h1>
-          {product.available ? (
-            <p className={styles.available}>Available</p>
-          ) : (
-            <p className={styles.notAvailable}>Product temporarily not available</p>
-          )}
-          <div className={styles.rating}>
-            <FaStar className={styles.icon} />
-            <FaStar className={styles.icon} />
-            <FaStar className={styles.icon} />
-            <FaStar className={styles.icon} />
-            <FaRegStar className={styles.icon} />
-          </div>
-          <p className={styles.description}>{product.descriptionFull}</p>
-          <div className={styles.addRemove}>
-            <Button className={styles.addToCart} onClick={addToCartHandler}>
-              Add to cart
-            </Button>
-          </div>
-        </div>
+        {product.name ? (
+          <>
+            <div className={styles.left}>
+              <img src={product.image} alt="product"></img>
+            </div>
+            <div className={styles.right}>
+              <h1>{product.name}</h1>
+              {product.available ? (
+                <p className={styles.available}>Available</p>
+              ) : (
+                <p className={styles.notAvailable}>Product temporarily not available</p>
+              )}
+              <div className={styles.rating}>
+                <FaStar className={styles.icon} />
+                <FaStar className={styles.icon} />
+                <FaStar className={styles.icon} />
+                <FaStar className={styles.icon} />
+                <FaRegStar className={styles.icon} />
+              </div>
+              <p className={styles.description}>{product.descriptionFull}</p>
+              <div className={styles.addRemove}>
+                <Button className={styles.addToCart} onClick={addToCartHandler}>
+                  Add to cart
+                </Button>
+              </div>
+            </div>
+          </>
+        ) : (
+          <NoProduct />
+        )}
       </div>
     );
   }
