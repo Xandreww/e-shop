@@ -24,9 +24,13 @@ class Component extends React.Component {
     this.props.removeFromCart(product.id);
   };
 
+  updateValue = (product) => {
+    return product.price * product.amount;
+  };
+
   render() {
     const { products } = this.props;
-    const { removeFromCartHandler } = this;
+    const { removeFromCartHandler, updateValue } = this;
 
     return (
       <div className={styles.root}>
@@ -50,7 +54,7 @@ class Component extends React.Component {
                       {product.name}
                     </td>
                     <td className={styles.td}>{product.price}</td>
-                    <td className={styles.td}>{product.price}</td>
+                    <td className={styles.td}>{updateValue(product)}</td>
                     <td className={styles.td}>
                       <AddRemoveButton product={product} />
                     </td>
