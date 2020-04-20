@@ -1,0 +1,7 @@
+GET http://localhost:8000/api/products/
+
+###
+
+GET http://localhost:8000/api/products/5e905d7ba87c9a31d048da07
+
+###
