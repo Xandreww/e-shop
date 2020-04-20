@@ -28,9 +28,23 @@ class Component extends React.Component {
     return product.price * product.amount;
   };
 
+  calculateOrderValue = () => {
+    let orderValue = 0;
+    const products = this.props.products;
+    for (let product of products) {
+      orderValue += product.price * product.amount;
+    }
+    this.calculateTotal(orderValue);
+    return orderValue;
+  };
+
+  calculateTotal = (orderValue) => {
+    return orderValue + 5;
+  };
+
   render() {
     const { products } = this.props;
-    const { removeFromCartHandler, updateValue } = this;
+    const { removeFromCartHandler, updateValue, calculateOrderValue, calculateTotal } = this;
 
     return (
       <div className={styles.root}>
@@ -75,9 +89,9 @@ class Component extends React.Component {
                   <p className={styles.info}>To pay:</p>
                 </div>
                 <div className={styles.rightSummary}>
-                  <p className={styles.info}>400</p>
+                  <p className={styles.info}>{calculateOrderValue()}</p>
                   <p className={styles.info}>5</p>
-                  <p className={styles.info}>405</p>
+                  <p className={styles.info}>{calculateTotal(calculateOrderValue())}</p>
                 </div>
               </div>
               <div className={styles.buttons}>
