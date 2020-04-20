@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { NoProduct } from '../NoProduct/NoProduct';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { getSingleProduct, addToCart } from '../../../redux/productsRedux';
@@ -47,7 +48,7 @@ class Component extends React.Component {
               </div>
               <p className={styles.description}>{product.descriptionFull}</p>
               <div className={styles.addRemove}>
-                <Button className={styles.addToCart} onClick={addToCartHandler}>
+                <Button as={Link} to="/Cart" className={styles.addToCart} onClick={addToCartHandler}>
                   Add to cart
                 </Button>
               </div>

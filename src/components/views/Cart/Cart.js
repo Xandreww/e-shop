@@ -34,7 +34,6 @@ class Component extends React.Component {
     for (let product of products) {
       orderValue += product.price * product.amount;
     }
-    this.calculateTotal(orderValue);
     return orderValue;
   };
 
