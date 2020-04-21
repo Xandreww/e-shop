@@ -1,3 +1,6 @@
+import Axios from 'axios';
+import { api } from '../settings';
+
 /* selectors */
 export const getAll = ({ products }) => products.data;
 export const getSingleProduct = ({ products }, productId) => {
@@ -5,6 +8,25 @@ export const getSingleProduct = ({ products }, productId) => {
   return filtered.length ? filtered[0] : { error: true };
 };
 export const getCart = ({ products }) => products.cart;
+
+/* thunk creators */
+export const fetchAllProducts = () => {
+  return (dispatch, getState) => {
+    const { products } = getState();
+
+    if (products.data.length === 0 && products.loading.active === false) {
+      dispatch(fetchStarted());
+
+      Axios.get(`${api.url}/${api.products}`)
+        .then((res) => {
+          dispatch(fetchSuccess(res.data));
+        })
+        .catch((err) => {
+          dispatch(fetchError(err.message || true));
+        });
+    }
+  };
+};
 
 /* action name creator */
 const reducerName = 'products';
