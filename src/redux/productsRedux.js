@@ -4,7 +4,7 @@ import { api } from '../settings';
 /* selectors */
 export const getAll = ({ products }) => products.data;
 export const getSingleProduct = ({ products }, productId) => {
-  const filtered = products.data.filter((product) => product.id === productId);
+  const filtered = products.data.filter((product) => product._id === productId);
   return filtered.length ? filtered[0] : { error: true };
 };
 export const getCart = ({ products }) => products.cart;

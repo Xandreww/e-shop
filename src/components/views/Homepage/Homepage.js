@@ -22,7 +22,7 @@ class Component extends React.Component {
       <div className={styles.root}>
         {products.length > 0 ? (
           products.map((product) => (
-            <Card key={product.id} className={styles.card} as={Link} to={`/product/${product.id}`}>
+            <Card key={product._id} className={styles.card} as={Link} to={`/product/${product._id}`}>
               <Card.Img variant="top" src={product.image} className={styles.image} />
               <Card.Body className={styles.cardBody}>
                 <Card.Title>{product.name}</Card.Title>
