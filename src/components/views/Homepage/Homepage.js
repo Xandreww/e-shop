@@ -4,6 +4,7 @@ import { NoProduct } from '../NoProduct/NoProduct';
 import { Card, Button } from 'react-bootstrap';
 import { IoIosPricetag } from 'react-icons/io';
 import { Link } from 'react-router-dom';
+import { api } from '../../../settings';
 
 import { connect } from 'react-redux';
 import { getAll } from '../../../redux/productsRedux';
@@ -23,7 +24,7 @@ class Component extends React.Component {
         {products.length > 0 ? (
           products.map((product) => (
             <Card key={product._id} className={styles.card} as={Link} to={`/product/${product._id}`}>
-              <Card.Img variant="top" src={product.image} className={styles.image} />
+              <Card.Img variant="top" src={`${api.imageUrl}${product.image}`} className={styles.image} />
               <Card.Body className={styles.cardBody}>
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text className={styles.description}>{product.descriptionShort}</Card.Text>

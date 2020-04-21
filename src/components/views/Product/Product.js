@@ -4,6 +4,7 @@ import { NoProduct } from '../NoProduct/NoProduct';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { api } from '../../../settings';
 
 import { connect } from 'react-redux';
 import { getSingleProduct, addToCart } from '../../../redux/productsRedux';
@@ -30,7 +31,7 @@ class Component extends React.Component {
         {product.name ? (
           <>
             <div className={styles.left}>
-              <img src={product.image} alt="product"></img>
+              <img src={`${api.imageUrl}${product.image}`} alt="product"></img>
             </div>
             <div className={styles.right}>
               <h1>{product.name}</h1>
