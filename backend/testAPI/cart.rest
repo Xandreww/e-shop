@@ -1,0 +1,7 @@
+GET http://localhost:8000/api/carts/
+
+###
+
+GET http://localhost:8000/api/carts/5ea02e982ea2a201f8786c3c
+
+###
