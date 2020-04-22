@@ -22,9 +22,8 @@ exports.getId = async (req, res) => {
 
 exports.add = async (req, res) => {
   try {
-    const { name, address, email, delivery, payment, comment } = req.fields;
-
-    const newForm = new Form({ name, address, email, delivery, payment, comment });
+    console.log(req.fields);
+    const newForm = new Form({ ...req.fields });
     await newForm.save(); // ...save form in DB
     res.json(newForm);
   } catch (err) {

@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button } from 'react-bootstrap';
 
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
+import { connect } from 'react-redux';
+import { addFormRequest } from '../../../redux/formsRedux.js';
 
 import styles from './Form.module.scss';
 
@@ -18,6 +18,10 @@ class Component extends React.Component {
       comment: '',
       accept: false,
     },
+  };
+
+  static propTypes = {
+    addForm: PropTypes.func,
   };
 
   handleChange = ({ target }) => {
@@ -51,11 +55,9 @@ class Component extends React.Component {
       for (let pair of formData.entries()) {
         console.log(pair[0] + ', ' + pair[1]);
       }
-    }
-  };
 
-  static propTypes = {
-    products: PropTypes.array,
+      this.props.addForm(formData);
+    }
   };
 
   render() {
@@ -106,18 +108,16 @@ class Component extends React.Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
+const mapStateToProps = (state) => ({});
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+const mapDispatchToProps = (dispatch) => ({
+  addForm: (payload) => dispatch(addFormRequest(payload)),
+});
 
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as Form,
-  // Container as Form,
+  // Component as Form,
+  Container as Form,
   Component as FormComponent,
 };
