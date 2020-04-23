@@ -28,6 +28,31 @@ export const fetchAllProducts = () => {
   };
 };
 
+export const postCartRequest = () => {
+  return (dispatch, getState) => {
+    dispatch(fetchStarted());
+
+    const store = getState();
+    const cart = store.products.cart;
+
+    const productIds = {
+      products: [],
+    };
+
+    for (let product in cart) {
+      productIds.products.push(cart[product]._id);
+    }
+
+    Axios.post(`${api.url}/${api.carts}`, productIds)
+      .then((res) => {
+        dispatch(fetchSuccess(res.data));
+      })
+      .catch((err) => {
+        dispatch(fetchError(err.message || true));
+      });
+  };
+};
+
 /* action name creator */
 const reducerName = 'products';
 const createActionName = (name) => `app/${reducerName}/${name}`;

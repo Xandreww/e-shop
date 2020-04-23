@@ -3,4 +3,5 @@ export const api = {
   imageUrl: '//' + window.location.hostname + (window.location.hostname === 'localhost' ? ':8000/' : ''),
   products: 'products',
   forms: 'forms',
+  carts: 'carts',
 };

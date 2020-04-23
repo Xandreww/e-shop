@@ -13,7 +13,7 @@ const app = express();
 /* MIDDLEWARE */
 // standard middleware
 app.use(cors());
-app.use(formidable());
+app.use('/api/forms', formidable());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

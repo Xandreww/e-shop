@@ -157,9 +157,9 @@ export const initialState = {
     ],
     cart: [
       {
-        id: '1',
+        _id: '5e9dc88402478e7e2786103d',
         name: 'Xbox',
-        image: xbox,
+        image: 'xbox.jpg',
         available: true,
         price: 200,
         amount: 3,
@@ -173,9 +173,9 @@ export const initialState = {
         vel vitae erat.`,
       },
       {
-        id: '2',
+        _id: '5e9dc958cd609c1244b4ad60',
         name: 'Play Station',
-        image: ps,
+        image: 'ps.jpg',
         available: true,
         price: 200,
         amount: 2,

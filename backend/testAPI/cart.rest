@@ -5,3 +5,15 @@ GET http://localhost:8000/api/carts/
 GET http://localhost:8000/api/carts/5ea02e982ea2a201f8786c3c
 
 ###
+
+POST http://localhost:8000/api/carts/
+content-type: application/json
+
+{
+  "products": [
+      "5e9dc88402478e7e2786103d",
+      "5e9dc958cd609c1244b4ad60"
+    ]
+}
+
+###

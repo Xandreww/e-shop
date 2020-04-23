@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { AddRemoveButton } from '../../features/AddRemoveButton/AddRemoveButton';
 import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
 import { MdRemoveShoppingCart } from 'react-icons/md';
+import { api } from '../../../settings';
 
 import { removeFromCart } from '../../../redux/productsRedux';
 import { connect } from 'react-redux';
@@ -61,9 +62,9 @@ class Component extends React.Component {
               </thead>
               <tbody>
                 {products.map((product) => (
-                  <tr key={product.id}>
+                  <tr key={product._id}>
                     <td className={styles.td}>
-                      <img src={product.image} alt="product"></img>
+                      <img src={`${api.imageUrl}${product.image}`} alt="product"></img>
                       {product.name}
                     </td>
                     <td className={styles.td}>{product.price}</td>

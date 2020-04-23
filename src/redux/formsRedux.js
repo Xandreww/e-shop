@@ -2,10 +2,6 @@ import axios from 'axios';
 import { api } from '../settings';
 
 /* SELECTORS */
-// export const getRequest = ({ photos }, name) => photos.requests[name];
-// export const getTrendingPhotos = ({ photos }) => [...photos.data].sort((a, b) => (a.votes > b.votes) ? -1 : 1).slice(0, 4);
-// export const getPhotos = ({ photos }) => photos.data;
-// export const getPhoto = ({ photos }, id) => photos.data.find(photo => photo._id === id);
 
 /* ACTIONS */
 
