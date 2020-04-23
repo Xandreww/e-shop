@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
+import notFound from '../../../images/notFound.jpg';
 
 import styles from './NotFound.module.scss';
 
-const Component = ({ className, children }) => (
+const Component = () => (
   <div className={styles.root}>
-    <h2>NotFound</h2>
-    {children}
+    <img className={styles.img} src={notFound} alt="page not found"></img>
   </div>
 );
 
@@ -18,18 +15,4 @@ Component.propTypes = {
   className: PropTypes.string,
 };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
-
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
-
-export {
-  Component as NotFound,
-  // Container as NotFound,
-  Component as NotFoundComponent,
-};
+export { Component as NotFound, Component as NotFoundComponent };
