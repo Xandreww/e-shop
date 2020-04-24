@@ -28,13 +28,13 @@ export const addFormRequest = (data) => {
   return async (dispatch) => {
     dispatch(startRequest({ name: ADD_FORM }));
     try {
-      let res = await axios.post(`${api.url}/${api.forms}`, data, {
+      await axios.post(`${api.url}/${api.forms}`, data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
 
-      dispatch(addForm(res.data));
+      // dispatch(addForm(res.data));
       dispatch(endRequest({ name: ADD_FORM }));
     } catch (error) {
       dispatch(errorRequest({ name: ADD_FORM, error: error.message }));

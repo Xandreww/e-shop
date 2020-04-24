@@ -9,7 +9,7 @@ import { api } from '../../../settings';
 
 import { connect } from 'react-redux';
 import { getCart } from '../../../redux/productsRedux';
-import { getForm } from '../../../redux/formsRedux';
+import { getForm, addFormRequest } from '../../../redux/formsRedux';
 
 import styles from './Summary.module.scss';
 
@@ -17,6 +17,7 @@ class Component extends React.Component {
   static propTypes = {
     products: PropTypes.array,
     form: PropTypes.array,
+    addFormRequest: PropTypes.func,
   };
 
   updateValue = (product) => {
@@ -36,9 +37,29 @@ class Component extends React.Component {
     return orderValue + 5;
   };
 
+  submitFormRequest = (event) => {
+    const { form } = this.props;
+    event.preventDefault();
+
+    // console.log('click!');
+    // console.log('form name:', form[0].name);
+
+    const formData = new FormData();
+
+    for (let key of ['name', 'address', 'email', 'delivery', 'payment', 'comment']) {
+      formData.append(key, form[0][key]);
+    }
+
+    for (let pair of formData.entries()) {
+      console.log(pair[0] + ', ' + pair[1]);
+    }
+
+    this.props.addFormRequest(formData);
+  };
+
   render() {
     const { products, form } = this.props;
-    const { updateValue, calculateOrderValue, calculateTotal } = this;
+    const { updateValue, calculateOrderValue, calculateTotal, submitFormRequest } = this;
 
     return (
       <div className={styles.root}>
@@ -150,7 +171,7 @@ class Component extends React.Component {
               <FaArrowCircleLeft className={styles.arrowLeft} />
               <p>Make changes</p>
             </Button>
-            <Button as={Link} to="/Form" className={styles.buttonRight}>
+            <Button as={Link} to="/Form" className={styles.buttonRight} onClick={submitFormRequest}>
               <p>Submit order</p>
               <FaArrowCircleRight className={styles.arrowRight} />
             </Button>
@@ -167,7 +188,7 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  // addToCart: (payload) => dispatch(addToCart(payload)),
+  addFormRequest: (payload) => dispatch(addFormRequest(payload)),
 });
 
 const SummaryContainer = connect(mapStateToProps, mapDispatchToProps)(Component);
