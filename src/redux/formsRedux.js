@@ -13,14 +13,14 @@ const createActionName = (name) => `app/${reducerName}/${name}`;
 const START_REQUEST = createActionName('START_REQUEST');
 const END_REQUEST = createActionName('END_REQUEST');
 const ERROR_REQUEST = createActionName('ERROR_REQUEST');
-
-export const ADD_FORM = createActionName('ADD_FORM');
+const ADD_FORM = createActionName('ADD_FORM');
+const CLEAR_FORM = createActionName('CLEAR_FORM');
 
 export const startRequest = (payload) => ({ payload, type: START_REQUEST });
 export const endRequest = (payload) => ({ payload, type: END_REQUEST });
 export const errorRequest = (payload) => ({ payload, type: ERROR_REQUEST });
-
 export const addForm = (payload) => ({ payload, type: ADD_FORM });
+export const clearForm = (payload) => ({ payload, type: CLEAR_FORM });
 
 /* THUNKS */
 
@@ -52,9 +52,10 @@ export const reducer = (statePart = initialState, action = {}) => {
   switch (action.type) {
     case ADD_FORM:
       console.log('ADD_FORM_REDUCER', action.payload);
-      console.log('initialState', initialState);
-      console.log('action', action);
       return { ...statePart, data: [...statePart.data, action.payload] };
+    case CLEAR_FORM:
+      console.log('CLEAR_FORM_REDUCER');
+      return { ...statePart, data: [] };
     case START_REQUEST:
       return { ...statePart, requests: { ...statePart.requests, [action.payload.name]: { pending: true, error: null, success: false } } };
     case END_REQUEST:

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { EmptyCart } from '../EmptyCart/EmptyCart';
+import { withRouter } from 'react-router';
 
 import { Table, Button, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -8,8 +9,8 @@ import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
 import { api } from '../../../settings';
 
 import { connect } from 'react-redux';
-import { getCart, postCartRequest } from '../../../redux/productsRedux';
-import { getForm, addFormRequest } from '../../../redux/formsRedux';
+import { getCart, postCartRequest, clearCart } from '../../../redux/productsRedux';
+import { getForm, addFormRequest, clearForm } from '../../../redux/formsRedux';
 
 import styles from './Summary.module.scss';
 
@@ -19,6 +20,9 @@ class Component extends React.Component {
     form: PropTypes.array,
     addFormRequest: PropTypes.func,
     postCartRequest: PropTypes.func,
+    clearForm: PropTypes.func,
+    clearCart: PropTypes.func,
+    history: PropTypes.object,
   };
 
   updateValue = (product) => {
@@ -40,7 +44,7 @@ class Component extends React.Component {
 
   submitFormRequest = (event) => {
     const { form } = this.props;
-    const { postCartRequest, addFormRequest } = this.props;
+    const { postCartRequest, addFormRequest, clearForm, clearCart } = this.props;
     event.preventDefault();
 
     const formData = new FormData();
@@ -55,6 +59,9 @@ class Component extends React.Component {
 
     addFormRequest(formData);
     postCartRequest();
+    clearForm();
+    clearCart();
+    this.props.history.push('/thankyou');
   };
 
   render() {
@@ -153,30 +160,32 @@ class Component extends React.Component {
             )}
           </div>
         </div>
-        <div className={styles.summary}>
-          <div className={styles.prices}>
-            <div className={styles.leftSummary}>
-              <p className={styles.info}>Order value:</p>
-              <p className={styles.info}>Shipping cost:</p>
-              <p className={styles.info}>To pay:</p>
+        {products.length > 0 && (
+          <div className={styles.summary}>
+            <div className={styles.prices}>
+              <div className={styles.leftSummary}>
+                <p className={styles.info}>Order value:</p>
+                <p className={styles.info}>Shipping cost:</p>
+                <p className={styles.info}>To pay:</p>
+              </div>
+              <div className={styles.rightSummary}>
+                <p className={styles.info}>{calculateOrderValue()}</p>
+                <p className={styles.info}>5</p>
+                <p className={styles.info}>{calculateTotal(calculateOrderValue())}</p>
+              </div>
             </div>
-            <div className={styles.rightSummary}>
-              <p className={styles.info}>{calculateOrderValue()}</p>
-              <p className={styles.info}>5</p>
-              <p className={styles.info}>{calculateTotal(calculateOrderValue())}</p>
+            <div className={styles.buttons}>
+              <Button as={Link} to="/cart" className={styles.buttonLeft}>
+                <FaArrowCircleLeft className={styles.arrowLeft} />
+                <p>Make changes</p>
+              </Button>
+              <Button as={Link} to="/Form" className={styles.buttonRight} onClick={submitFormRequest}>
+                <p>Submit order</p>
+                <FaArrowCircleRight className={styles.arrowRight} />
+              </Button>
             </div>
           </div>
-          <div className={styles.buttons}>
-            <Button as={Link} to="/cart" className={styles.buttonLeft}>
-              <FaArrowCircleLeft className={styles.arrowLeft} />
-              <p>Make changes</p>
-            </Button>
-            <Button as={Link} to="/Form" className={styles.buttonRight} onClick={submitFormRequest}>
-              <p>Submit order</p>
-              <FaArrowCircleRight className={styles.arrowRight} />
-            </Button>
-          </div>
-        </div>
+        )}
       </div>
     );
   }
@@ -190,9 +199,11 @@ const mapStateToProps = (state, props) => ({
 const mapDispatchToProps = (dispatch) => ({
   addFormRequest: (payload) => dispatch(addFormRequest(payload)),
   postCartRequest: (payload) => dispatch(postCartRequest(payload)),
+  clearForm: (payload) => dispatch(clearForm(payload)),
+  clearCart: (payload) => dispatch(clearCart(payload)),
 });
 
-const SummaryContainer = connect(mapStateToProps, mapDispatchToProps)(Component);
+const SummaryContainer = withRouter(connect(mapStateToProps, mapDispatchToProps)(Component));
 
 export {
   // Component as Summary,

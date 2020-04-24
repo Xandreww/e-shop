@@ -13,6 +13,7 @@ import { Homepage } from './components/views/Homepage/Homepage';
 import { Cart } from './components/views/Cart/Cart';
 import { Form } from './components/views/Form/Form';
 import { Summary } from './components/views/Summary/Summary';
+import { ThankYou } from './components/views/ThankYou/ThankYou';
 import { NotFound } from './components/views/NotFound/NotFound';
 
 class Component extends React.Component {
@@ -36,6 +37,7 @@ class Component extends React.Component {
               <Route exact path="/cart" component={Cart} />
               <Route exact path="/form" component={Form} />
               <Route exact path="/summary" component={Summary} />
+              <Route exact path="/thankyou" component={ThankYou} />
               <Route exact path="/product/:id" component={Product} />
               <Route path="*" component={NotFound} />
             </Switch>
@@ -57,21 +59,3 @@ const mapDispatchToProps = (dispatch) => ({
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export { Container as App };
-
-// const App = () => (
-//   <Provider store={store}>
-//     <BrowserRouter>
-//       <MainLayout>
-//         <Switch>
-//           <Route exact path="/" component={Homepage} />
-//           <Route exact path="/cart" component={Cart} />
-//           <Route exact path="/form" component={Form} />
-//           <Route exact path="/product/:id" component={Product} />
-//           <Route path="*" component={NotFound} />
-//         </Switch>
-//       </MainLayout>
-//     </BrowserRouter>
-//   </Provider>
-// );
-
-// export { App };
