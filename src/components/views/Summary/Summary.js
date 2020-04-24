@@ -8,7 +8,7 @@ import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
 import { api } from '../../../settings';
 
 import { connect } from 'react-redux';
-import { getCart } from '../../../redux/productsRedux';
+import { getCart, postCartRequest } from '../../../redux/productsRedux';
 import { getForm, addFormRequest } from '../../../redux/formsRedux';
 
 import styles from './Summary.module.scss';
@@ -18,6 +18,7 @@ class Component extends React.Component {
     products: PropTypes.array,
     form: PropTypes.array,
     addFormRequest: PropTypes.func,
+    postCartRequest: PropTypes.func,
   };
 
   updateValue = (product) => {
@@ -39,10 +40,8 @@ class Component extends React.Component {
 
   submitFormRequest = (event) => {
     const { form } = this.props;
+    const { postCartRequest, addFormRequest } = this.props;
     event.preventDefault();
-
-    // console.log('click!');
-    // console.log('form name:', form[0].name);
 
     const formData = new FormData();
 
@@ -54,7 +53,8 @@ class Component extends React.Component {
       console.log(pair[0] + ', ' + pair[1]);
     }
 
-    this.props.addFormRequest(formData);
+    addFormRequest(formData);
+    postCartRequest();
   };
 
   render() {
@@ -189,6 +189,7 @@ const mapStateToProps = (state, props) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   addFormRequest: (payload) => dispatch(addFormRequest(payload)),
+  postCartRequest: (payload) => dispatch(postCartRequest(payload)),
 });
 
 const SummaryContainer = connect(mapStateToProps, mapDispatchToProps)(Component);

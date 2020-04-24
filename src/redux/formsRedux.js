@@ -33,8 +33,6 @@ export const addFormRequest = (data) => {
           'Content-Type': 'multipart/form-data',
         },
       });
-
-      // dispatch(addForm(res.data));
       dispatch(endRequest({ name: ADD_FORM }));
     } catch (error) {
       dispatch(errorRequest({ name: ADD_FORM, error: error.message }));

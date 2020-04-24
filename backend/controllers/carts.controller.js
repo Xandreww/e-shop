@@ -24,6 +24,7 @@ exports.getId = async (req, res) => {
 exports.add = async (req, res) => {
   try {
     const { products } = req.body;
+    // console.log(products);
     const newCart = new Cart({ products: products });
     await newCart.save();
     res.json({ products });
