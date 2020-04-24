@@ -2,6 +2,7 @@ import axios from 'axios';
 import { api } from '../settings';
 
 /* SELECTORS */
+export const getForm = ({ forms }) => forms.data;
 
 /* ACTIONS */
 
@@ -53,6 +54,8 @@ export const reducer = (statePart = initialState, action = {}) => {
   switch (action.type) {
     case ADD_FORM:
       console.log('ADD_FORM_REDUCER', action.payload);
+      console.log('initialState', initialState);
+      console.log('action', action);
       return { ...statePart, data: [...statePart.data, action.payload] };
     case START_REQUEST:
       return { ...statePart, requests: { ...statePart.requests, [action.payload.name]: { pending: true, error: null, success: false } } };
