@@ -7,6 +7,7 @@ const formSchema = new mongoose.Schema({
   delivery: { type: String, required: true },
   payment: { type: String, required: true },
   comment: { type: String },
+  user: { type: String, required: true },
 });
 
 module.exports = mongoose.model('Form', formSchema);

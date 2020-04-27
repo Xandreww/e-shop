@@ -34,9 +34,11 @@ export const postCartRequest = () => {
 
     const store = getState();
     const cart = store.products.cart;
+    const user = store.users.data;
 
     const productIds = {
       products: [],
+      user: user[0],
     };
 
     for (let product in cart) {

@@ -1,51 +1,26 @@
-// import Axios from 'axios';
-// import { api } from '../settings';
+import Axios from 'axios';
+import { api } from '../settings';
 
 /* selectors */
+export const getUser = ({ users }) => users.data;
 
 /* thunk creators */
-// export const fetchAllProducts = () => {
-//   return (dispatch, getState) => {
-//     const { users } = getState();
 
-//     if (users.data.length === 0 && users.loading.active === false) {
-//       dispatch(fetchStarted());
+export const postUserRequest = (id) => {
+  return (dispatch, getState) => {
+    dispatch(fetchStarted());
 
-//       Axios.get(`${api.url}/${api.users}`)
-//         .then((res) => {
-//           dispatch(fetchSuccess(res.data));
-//         })
-//         .catch((err) => {
-//           dispatch(fetchError(err.message || true));
-//         });
-//     }
-//   };
-// };
+    console.log('id in thunk:', id);
 
-// export const postCartRequest = () => {
-//   return (dispatch, getState) => {
-//     dispatch(fetchStarted());
-
-//     const store = getState();
-//     const cart = store.users.cart;
-
-//     const productIds = {
-//       users: [],
-//     };
-
-//     for (let product in cart) {
-//       productIds.users.push(cart[product]._id);
-//     }
-
-//     Axios.post(`${api.url}/${api.carts}`, productIds)
-//       .then((res) => {
-//         dispatch(fetchSuccess(res.data));
-//       })
-//       .catch((err) => {
-//         dispatch(fetchError(err.message || true));
-//       });
-//   };
-// };
+    Axios.post(`${api.url}/${api.users}`, id)
+      .then((res) => {
+        dispatch(fetchSuccess(res.data));
+      })
+      .catch((err) => {
+        dispatch(fetchError(err.message || true));
+      });
+  };
+};
 
 /* action name creator */
 const reducerName = 'users';

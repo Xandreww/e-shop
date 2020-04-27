@@ -22,9 +22,9 @@ exports.getId = async (req, res) => {
 
 exports.add = async (req, res) => {
   try {
-    const { products } = req.body;
-    // console.log(products);
-    const newCart = new Cart({ products: products });
+    const { products, user } = req.body;
+    // console.log('products', products);
+    const newCart = new Cart({ products: products, user: user });
     await newCart.save();
     res.json({ products });
   } catch (err) {

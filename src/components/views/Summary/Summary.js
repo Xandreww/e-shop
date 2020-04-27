@@ -11,6 +11,7 @@ import { api } from '../../../settings';
 import { connect } from 'react-redux';
 import { getCart, postCartRequest, clearCart } from '../../../redux/productsRedux';
 import { getForm, addFormRequest, clearForm } from '../../../redux/formsRedux';
+import { getUser, postUserRequest, clearUser } from '../../../redux/usersRedux';
 
 import styles from './Summary.module.scss';
 
@@ -18,10 +19,13 @@ class Component extends React.Component {
   static propTypes = {
     products: PropTypes.array,
     form: PropTypes.array,
+    user: PropTypes.array,
     addFormRequest: PropTypes.func,
     postCartRequest: PropTypes.func,
+    postUserRequest: PropTypes.func,
     clearForm: PropTypes.func,
     clearCart: PropTypes.func,
+    clearUser: PropTypes.func,
     history: PropTypes.object,
   };
 
@@ -43,8 +47,8 @@ class Component extends React.Component {
   };
 
   submitFormRequest = (event) => {
-    const { form } = this.props;
-    const { postCartRequest, addFormRequest, clearForm, clearCart } = this.props;
+    const { form, user } = this.props;
+    const { postCartRequest, addFormRequest, postUserRequest, clearForm, clearCart, clearUser } = this.props;
     event.preventDefault();
 
     const formData = new FormData();
@@ -53,24 +57,30 @@ class Component extends React.Component {
       formData.append(key, form[0][key]);
     }
 
+    formData.append('user', user[0]);
+
     for (let pair of formData.entries()) {
       console.log(pair[0] + ', ' + pair[1]);
     }
 
+    console.log('user[0]:', user[0]);
+
     addFormRequest(formData);
     postCartRequest();
+    postUserRequest({ id: user[0] });
     clearForm();
     clearCart();
+    clearUser();
     this.props.history.push('/thankyou');
   };
 
   render() {
-    const { products, form } = this.props;
+    const { products, form, user } = this.props;
     const { updateValue, calculateOrderValue, calculateTotal, submitFormRequest } = this;
 
     return (
       <div className={styles.root}>
-        {console.log('form:', form)}
+        {console.log('user:', user[0])}
         <div className={styles.content}>
           <div className={styles.left}>
             {products.length > 0 ? (
@@ -194,13 +204,16 @@ class Component extends React.Component {
 const mapStateToProps = (state, props) => ({
   products: getCart(state),
   form: getForm(state),
+  user: getUser(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
   addFormRequest: (payload) => dispatch(addFormRequest(payload)),
   postCartRequest: (payload) => dispatch(postCartRequest(payload)),
+  postUserRequest: (payload) => dispatch(postUserRequest(payload)),
   clearForm: (payload) => dispatch(clearForm(payload)),
   clearCart: (payload) => dispatch(clearCart(payload)),
+  clearUser: (payload) => dispatch(clearUser(payload)),
 });
 
 const SummaryContainer = withRouter(connect(mapStateToProps, mapDispatchToProps)(Component));
