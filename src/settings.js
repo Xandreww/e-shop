@@ -4,4 +4,5 @@ export const api = {
   products: 'products',
   forms: 'forms',
   carts: 'carts',
+  users: 'uses',
 };

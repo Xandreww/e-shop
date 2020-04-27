@@ -5,8 +5,10 @@ import { Product } from './components/views/Product/Product';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getAll, fetchAllProducts } from './redux/productsRedux';
+import { v4 as uuidv4 } from 'uuid';
 
 import { store } from './redux/store';
+import { addUser } from './redux/usersRedux';
 
 import { MainLayout } from './components/layout/MainLayout/MainLayout';
 import { Homepage } from './components/views/Homepage/Homepage';
@@ -20,11 +22,13 @@ class Component extends React.Component {
   static propTypes = {
     products: PropTypes.array,
     fetchAllProducts: PropTypes.func,
+    addUser: PropTypes.func,
   };
 
   componentDidMount() {
-    const { fetchAllProducts } = this.props;
+    const { fetchAllProducts, addUser } = this.props;
     fetchAllProducts();
+    addUser(uuidv4());
   }
 
   render() {
@@ -54,6 +58,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchAllProducts: () => dispatch(fetchAllProducts()),
+  addUser: (payload) => dispatch(addUser(payload)),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);

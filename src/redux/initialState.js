@@ -62,4 +62,7 @@ export const initialState = {
       // },
     ],
   },
+  users: {
+    data: [],
+  },
 };
