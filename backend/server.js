@@ -7,6 +7,7 @@ const formidable = require('express-formidable');
 const productsRoutes = require('./routes/products.routes');
 const formsRoutes = require('./routes/forms.routes');
 const cartsRoutes = require('./routes/carts.routes');
+const usersRoutes = require('./routes/users.routes');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api', productsRoutes);
 app.use('/api', formsRoutes);
 app.use('/api', cartsRoutes);
+app.use('/api', usersRoutes);
 
 /* API ERROR PAGES */
 app.use('/api', (req, res) => {

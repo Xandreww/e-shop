@@ -2,7 +2,6 @@ const Cart = require('../models/cart.model');
 
 exports.getCarts = async (req, res) => {
   try {
-    // const result = await Cart.find().populate('products');
     const result = await Cart.find();
     if (!result) res.status(404).json({ cart: 'Not found' });
     else res.json(result);

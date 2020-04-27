@@ -1,0 +1,16 @@
+GET http://localhost:8000/api/users/
+
+###
+
+GET http://localhost:8000/api/users/5ea6c2ac39adc493748bc879
+
+###
+
+POST http://localhost:8000/api/users/
+content-type: application/json
+
+{
+  "id": "1122334455"
+}
+
+###
