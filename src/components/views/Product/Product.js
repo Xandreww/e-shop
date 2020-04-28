@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NoProduct } from '../NoProduct/NoProduct';
-import { FaStar, FaRegStar } from 'react-icons/fa';
+import { FaStar, FaRegStar, FaLuggageCart } from 'react-icons/fa';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { api } from '../../../settings';
@@ -12,6 +12,10 @@ import { getSingleProduct, addToCart } from '../../../redux/productsRedux';
 import styles from './Product.module.scss';
 
 class Component extends React.Component {
+  state = {
+    clicked: false,
+  };
+
   static propTypes = {
     product: PropTypes.object,
     match: PropTypes.object,
@@ -20,11 +24,13 @@ class Component extends React.Component {
 
   addToCartHandler = () => {
     this.props.addToCart(this.props.product);
+    this.setState({ clicked: true });
   };
 
   render() {
     const { product } = this.props;
     const { addToCartHandler } = this;
+    const { clicked } = this.state;
 
     return (
       <div className={styles.root}>
@@ -48,10 +54,16 @@ class Component extends React.Component {
                 <FaRegStar className={styles.icon} />
               </div>
               <p className={styles.description}>{product.descriptionFull}</p>
-              <div className={styles.addRemove}>
-                <Button as={Link} to="/Cart" className={styles.addToCart} onClick={addToCartHandler}>
-                  Add to cart
-                </Button>
+              <div>
+                {!clicked ? (
+                  <Button as={Link} to="/Cart" className={styles.addToCart} onClick={addToCartHandler}>
+                    Add to cart
+                  </Button>
+                ) : (
+                  <Button className={styles.added}>
+                    <FaLuggageCart className={styles.luggageCart} /> Product added to cart
+                  </Button>
+                )}
               </div>
             </div>
           </>

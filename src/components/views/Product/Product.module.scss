@@ -43,4 +43,14 @@
     flex-direction: row;
     align-items: center;
   }
+
+  .added {
+    background-color: green;
+    pointer-events: none;
+  }
+
+  .luggageCart {
+    font-size: 20px;
+    margin-right: 5px;
+  }
 }
