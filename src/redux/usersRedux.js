@@ -10,8 +10,6 @@ export const postUserRequest = (id) => {
   return (dispatch, getState) => {
     dispatch(fetchStarted());
 
-    console.log('id in thunk:', id);
-
     Axios.post(`${api.url}/${api.users}`, id)
       .then((res) => {
         dispatch(fetchSuccess(res.data));

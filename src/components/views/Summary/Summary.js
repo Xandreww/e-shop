@@ -59,11 +59,9 @@ class Component extends React.Component {
 
     formData.append('user', user[0]);
 
-    for (let pair of formData.entries()) {
-      console.log(pair[0] + ', ' + pair[1]);
-    }
-
-    console.log('user[0]:', user[0]);
+    // for (let pair of formData.entries()) {
+    //   console.log(pair[0] + ', ' + pair[1]);
+    // }
 
     addFormRequest(formData);
     postCartRequest();
@@ -75,12 +73,11 @@ class Component extends React.Component {
   };
 
   render() {
-    const { products, form, user } = this.props;
+    const { products, form } = this.props;
     const { updateValue, calculateOrderValue, calculateTotal, submitFormRequest } = this;
 
     return (
       <div className={styles.root}>
-        {console.log('user:', user[0])}
         <div className={styles.content}>
           <div className={styles.left}>
             {products.length > 0 ? (

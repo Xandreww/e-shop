@@ -1,5 +1,7 @@
 const Form = require('../models/form.model');
 
+const formValidation = require('../utils/formValidation');
+
 exports.getForms = async (req, res) => {
   try {
     const result = await Form.find();
@@ -22,10 +24,13 @@ exports.getId = async (req, res) => {
 
 exports.add = async (req, res) => {
   try {
-    // console.log(req.fields);
-    const newForm = new Form({ ...req.fields });
-    await newForm.save(); // ...save form in DB
-    res.json(newForm);
+    const { name, address, email, delivery, payment } = req.fields;
+
+    if (formValidation.validateForm(name, address, email, delivery, payment)) {
+      const newForm = new Form({ ...req.fields });
+      await newForm.save(); // ...save form in DB
+      res.json(newForm);
+    }
   } catch (err) {
     res.status(500).json(err);
   }

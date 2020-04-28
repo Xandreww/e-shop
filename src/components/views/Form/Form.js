@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button } from 'react-bootstrap';
 import { withRouter } from 'react-router';
+import { validateForm } from '../../../utils/validateForm';
 
 import { connect } from 'react-redux';
 import { addForm } from '../../../redux/formsRedux.js';
@@ -44,13 +45,14 @@ class Component extends React.Component {
   };
 
   handleProceed = (event) => {
-    const { order } = this.state;
-    const { accept } = this.state;
+    const { order, accept } = this.state;
     event.preventDefault();
 
     if (accept) {
-      this.props.addForm(order);
-      this.props.history.push('/summary');
+      if (validateForm(order.name, order.address, order.email, order.delivery, order.payment)) {
+        this.props.addForm(order);
+        this.props.history.push('/summary');
+      }
     } else {
       this.setState({ showInstruction: true });
     }
