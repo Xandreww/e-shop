@@ -33,12 +33,12 @@ class Component extends React.Component {
     return (
       <div className={styles.root}>
         <div className={styles.addRemove}>
-          <Button className={styles.addButton} onClick={increaseHandler}>
-            <IoMdAdd className={styles.icon} />
-          </Button>
-          <p>{product.amount}</p>
           <Button className={styles.removeButton} onClick={decreaseHandler}>
             <IoMdRemove className={styles.icon} />
+          </Button>
+          <p>{product.amount}</p>
+          <Button className={styles.addButton} onClick={increaseHandler}>
+            <IoMdAdd className={styles.icon} />
           </Button>
         </div>
       </div>
