@@ -40,7 +40,7 @@ class Component extends React.Component {
               <img src={`${api.imageUrl}${product.image}`} alt="product"></img>
             </div>
             <div className={styles.right}>
-              <h1>{product.name}</h1>
+              <h1 className={styles.header}>{product.name}</h1>
               {product.available ? (
                 <p className={styles.available}>Available</p>
               ) : (
@@ -54,7 +54,7 @@ class Component extends React.Component {
                 <FaRegStar className={styles.icon} />
               </div>
               <p className={styles.description}>{product.descriptionFull}</p>
-              <div>
+              <div className={styles.button}>
                 {!clicked ? (
                   <Button as={Link} to="/Cart" className={styles.addToCart} onClick={addToCartHandler}>
                     Add to cart
