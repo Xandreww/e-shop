@@ -120,9 +120,153 @@
 
     .arrowIcon {
       color: black;
-      font-size: 20px;
       font-size: 45px;
       height: 40px;
+    }
+  }
+}
+
+// Laptop
+@media (max-width: 1024px) {
+  .navbar {
+    // background-color: red;
+    form {
+      .search {
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 768px) {
+  .navbar {
+    // background-color: red;
+    form {
+      .search {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+// Mobile - L
+@media (max-width: 425px) {
+  .navbar {
+    height: 30px;
+
+    .brand {
+      margin: 0 5px;
+      font-size: 15px;
+      padding: 0px 5px;
+    }
+
+    form {
+      width: 100%;
+
+      .search {
+        width: 1000%;
+        height: 100%;
+      }
+    }
+
+    .cartButton {
+      margin: 0 5px;
+      padding: 0 10px;
+
+      .cartIcon {
+        font-size: 15px;
+      }
+
+      .number {
+        font-size: 13px;
+      }
+    }
+
+    .profileButton {
+      line-height: 10px;
+      font-size: 15px;
+
+      img {
+        max-height: 20px;
+        max-width: 20px;
+      }
+
+      .arrowIcon {
+        font-size: 20px;
+        height: 20px;
+      }
+    }
+
+    .searchIcon {
+      height: 100%;
+      font-size: 20px;
+    }
+  }
+}
+
+// Mobile - M
+@media (max-width: 375px) {
+  .navbar {
+    .brand {
+      font-size: 13px;
+    }
+
+    .cartIcon {
+      font-size: 13px;
+    }
+
+    .number {
+      font-size: 8px;
+    }
+
+    .arrowIcon {
+      font-size: 18px;
+      height: 18px;
+    }
+
+    .searchIcon {
+      font-size: 18px;
+    }
+
+    .profileButton {
+      font-size: 13px;
+    }
+
+    .cartButton {
+      padding: 0 5px;
+    }
+  }
+}
+
+// Mobile - S
+@media (max-width: 320px) {
+  .navbar {
+    .brand {
+      font-size: 11px;
+    }
+
+    .cartIcon {
+      font-size: 11px;
+    }
+
+    .number {
+      font-size: 6px;
+    }
+
+    .arrowIcon {
+      font-size: 16px;
+      height: 16px;
+    }
+
+    .searchIcon {
+      font-size: 16px;
+    }
+
+    .profileButton {
+      font-size: 11px;
     }
   }
 }
