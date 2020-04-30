@@ -26,7 +26,7 @@ class Component extends React.Component {
             <Card key={product._id} className={styles.card} as={Link} to={`/product/${product._id}`}>
               <Card.Img variant="top" src={`${api.imageUrl}${product.image}`} className={styles.image} />
               <Card.Body className={styles.cardBody}>
-                <Card.Title>{product.name}</Card.Title>
+                <Card.Title className={styles.title}>{product.name}</Card.Title>
                 <Card.Text className={styles.description}>{product.descriptionShort}</Card.Text>
                 <Button variant="primary" className={styles.priceButton}>
                   <IoIosPricetag className={styles.priceTag} />
