@@ -116,7 +116,7 @@ export const reducer = (statePart = [], action = {}) => {
       console.log('ADD_TO_CART_REDUCER', action.payload);
       return {
         ...statePart,
-        cart: [...statePart.cart, action.payload],
+        cart: statePart.cart.some((product) => product._id === action.payload._id) ? statePart.cart : [...statePart.cart, action.payload],
         loading: {
           active: false,
           error: false,
