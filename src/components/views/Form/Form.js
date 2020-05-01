@@ -64,39 +64,39 @@ class Component extends React.Component {
 
     return (
       <Form onSubmit={handleProceed} className={styles.root}>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>First name, last name</Form.Label>
-          <Form.Control type="text" placeholder="John Doe" name="name" onChange={handleChange} />
+        <Form.Group className={styles.formGroup} controlId="formBasicEmail">
+          <Form.Label className={styles.label}>First name, last name</Form.Label>
+          <Form.Control className={styles.control} type="text" placeholder="John Doe" name="name" onChange={handleChange} />
         </Form.Group>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Address</Form.Label>
-          <Form.Control type="text" placeholder="Your address" name="address" onChange={handleChange} />
+        <Form.Group className={styles.formGroup} controlId="formBasicEmail">
+          <Form.Label className={styles.label}>Address</Form.Label>
+          <Form.Control className={styles.control} type="text" placeholder="Your address" name="address" onChange={handleChange} />
         </Form.Group>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" name="email" onChange={handleChange} />
+        <Form.Group className={styles.formGroup} controlId="formBasicEmail">
+          <Form.Label className={styles.label}>Email</Form.Label>
+          <Form.Control className={styles.control} type="email" placeholder="Enter email" name="email" onChange={handleChange} />
         </Form.Group>
-        <Form.Group controlId="exampleForm.SelectCustom">
-          <Form.Label>Delivery method:</Form.Label>
-          <Form.Control as="select" custom name="delivery" onChange={handleChange}>
+        <Form.Group className={styles.formGroup} controlId="exampleForm.SelectCustom">
+          <Form.Label className={styles.label}>Delivery method:</Form.Label>
+          <Form.Control className={styles.control} as="select" custom name="delivery" onChange={handleChange}>
             <option>Courier</option>
             <option>Parcel locker</option>
             <option>Personal pickup</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group controlId="exampleForm.SelectCustom" name="payment" onChange={handleChange}>
-          <Form.Label>Payment method:</Form.Label>
-          <Form.Control as="select" custom name="payment" onChange={handleChange}>
+        <Form.Group className={styles.formGroup} controlId="exampleForm.SelectCustom" name="payment" onChange={handleChange}>
+          <Form.Label className={styles.label}>Payment method:</Form.Label>
+          <Form.Control className={styles.control} as="select" custom name="payment" onChange={handleChange}>
             <option>Transfer</option>
             <option>Upon receipt</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Additional remarks:</Form.Label>
-          <Form.Control as="textarea" rows="3" name="comment" onChange={handleChange} />
+        <Form.Group className={styles.formGroup} controlId="exampleForm.ControlTextarea1">
+          <Form.Label className={styles.label}>Additional remarks:</Form.Label>
+          <Form.Control className={styles.control} as="textarea" rows="3" name="comment" onChange={handleChange} />
         </Form.Group>
-        <Form.Group controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="I accept terms and conditions" onChange={handleAccept} />
+        <Form.Group className={styles.formGroup} controlId="formBasicCheckbox">
+          <Form.Check type="checkbox" label="I accept terms and conditions" onChange={handleAccept} className={styles.label} />
           {showInstruction && <p className={styles.instruction}>To proceed, you need to accept terms and conditions</p>}
         </Form.Group>
         <Button variant="primary" className={styles.submitButton} onClick={handleProceed}>
