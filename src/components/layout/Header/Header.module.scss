@@ -37,6 +37,10 @@
     .search {
       width: 30%;
       margin: 0 auto;
+
+      &:focus {
+        display: block;
+      }
     }
   }
 
@@ -126,13 +130,33 @@
   }
 }
 
+@media (max-width: 1265px) {
+  .navbar {
+    form {
+      .search {
+        width: 60%;
+      }
+    }
+  }
+}
+
 // Laptop
 @media (max-width: 1024px) {
   .navbar {
     form {
       .search {
-        width: 50%;
+        width: 55%;
         margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .navbar {
+    form {
+      .search {
+        width: 70%;
       }
     }
   }
@@ -144,9 +168,37 @@
     form {
       .search {
         width: 80%;
-        margin: 0 auto;
       }
     }
+  }
+}
+
+@media (max-width: 880px) {
+  .navbar {
+    form {
+      .search {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 675px) {
+  .navbar {
+    align-items: center;
+
+    form {
+      width: 100%;
+
+      .search {
+        width: 1000%;
+        height: 100%;
+      }
+    }
+  }
+
+  .formControl {
+    width: 100%;
   }
 }
 

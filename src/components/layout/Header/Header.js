@@ -15,6 +15,7 @@ import styles from './Header.module.scss';
 class Component extends React.Component {
   state = {
     viewportWidth: 0,
+    active: false,
   };
 
   static propTypes = {
@@ -35,37 +36,45 @@ class Component extends React.Component {
     }
   };
 
+  toggleClass = () => {
+    this.setState({ active: true });
+  };
+
   render() {
-    const { numberOfProducts } = this;
-    const { viewportWidth } = this.state;
+    const { numberOfProducts, toggleClass } = this;
+    const { viewportWidth, active } = this.state;
 
     return (
-      <Navbar bg="light" expand="lg">
-        {console.log('viewportWidth:', viewportWidth)}
-        <div className={styles.navbar}>
-          <Navbar.Brand as={Link} to="/" className={styles.brand}>
-            <p>E-shop</p>
-          </Navbar.Brand>
-          {viewportWidth > 425 ? (
-            <Form inline>
-              <FormControl type="text" placeholder="Hello, what are you looking for?" className={styles.search} />
-            </Form>
-          ) : (
-            <GoSearch className={styles.searchIcon} />
-          )}
-          <div className={styles.rightSide}>
-            <Button as={Link} to="/Cart" className={styles.cartButton}>
-              <FiShoppingCart className={styles.cartIcon} />
-              <p className={styles.number}>{numberOfProducts()}</p>
-            </Button>
-            <Button className={styles.profileButton}>
-              <img src={profileImage} alt="profile" />
-              <p>Hi, John!</p>
-              <IoIosArrowDown className={styles.arrowIcon} />
-            </Button>
+      <>
+        <Navbar bg="light" expand="lg">
+          {console.log('viewportWidth:', viewportWidth)}
+          {console.log('active:', active)}
+          <div className={styles.navbar}>
+            <Navbar.Brand as={Link} to="/" className={styles.brand}>
+              <p>E-shop</p>
+            </Navbar.Brand>
+            {viewportWidth > 675 ? (
+              <Form inline>
+                <FormControl type="text" placeholder="Hello, what are you looking for?" className={styles.search} />
+              </Form>
+            ) : (
+              <GoSearch className={active && styles.hideSearchIcon} onClick={toggleClass} />
+            )}
+            <div className={styles.rightSide}>
+              <Button as={Link} to="/Cart" className={styles.cartButton}>
+                <FiShoppingCart className={styles.cartIcon} />
+                <p className={styles.number}>{numberOfProducts()}</p>
+              </Button>
+              <Button className={styles.profileButton}>
+                <img src={profileImage} alt="profile" />
+                <p>Hi, John!</p>
+                <IoIosArrowDown className={styles.arrowIcon} />
+              </Button>
+            </div>
           </div>
-        </div>
-      </Navbar>
+        </Navbar>
+        {active && <FormControl type="text" placeholder="Hello, what are you looking for?" className={styles.formControl} />}
+      </>
     );
   }
 }
