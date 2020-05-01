@@ -74,9 +74,9 @@ class Component extends React.Component {
     addFormRequest(formData);
     postCartRequest();
     postUserRequest({ id: user[0] });
-    // clearForm();
-    // clearCart();
-    // clearUser();
+    clearForm();
+    clearCart();
+    clearUser();
     this.props.history.push('/thankyou');
   };
 
