@@ -52,14 +52,14 @@ export const initialState = {
   },
   forms: {
     data: [
-      // {
-      //   name: 'John Doe',
-      //   address: 'testAddress',
-      //   email: 'test@test.test',
-      //   delivery: 'Courier',
-      //   payment: 'Transfer',
-      //   comment: 'testComment',
-      // },
+      {
+        name: 'John Doe',
+        address: 'testAddress',
+        email: 'test@test.test',
+        delivery: 'Courier',
+        payment: 'Transfer',
+        comment: 'testComment',
+      },
     ],
   },
   users: {

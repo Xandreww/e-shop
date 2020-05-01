@@ -16,6 +16,10 @@ import { getUser, postUserRequest, clearUser } from '../../../redux/usersRedux';
 import styles from './Summary.module.scss';
 
 class Component extends React.Component {
+  state = {
+    viewportWidth: 0,
+  };
+
   static propTypes = {
     products: PropTypes.array,
     form: PropTypes.array,
@@ -28,6 +32,10 @@ class Component extends React.Component {
     clearUser: PropTypes.func,
     history: PropTypes.object,
   };
+
+  componentWillMount() {
+    this.setState({ viewportWidth: window.innerWidth });
+  }
 
   updateValue = (product) => {
     return product.price * product.amount;
@@ -74,27 +82,31 @@ class Component extends React.Component {
 
   render() {
     const { products, form } = this.props;
+    const { viewportWidth } = this.state;
     const { updateValue, calculateOrderValue, calculateTotal, submitFormRequest } = this;
 
     return (
       <div className={styles.root}>
+        {console.log('viewportWidth:', viewportWidth)}
         <div className={styles.content}>
           <div className={styles.left}>
             {products.length > 0 ? (
               <Table bordered hover>
                 <thead>
                   <tr>
-                    <th>Product</th>
-                    <th>Unit price</th>
-                    <th>Value</th>
-                    <th>Amount</th>
+                    <th className={styles.productHeader}>Product</th>
+                    <th className={styles.productHeader}>Unit price</th>
+                    <th className={styles.productHeader}>Value</th>
+                    <th className={styles.productHeader}>Amount</th>
                   </tr>
                 </thead>
                 <tbody>
                   {products.map((product) => (
                     <tr key={product._id}>
                       <td className={styles.td}>
-                        <img src={`${api.imageUrl}${product.image}`} alt="product" className={styles.productImage}></img>
+                        {viewportWidth > 320 && (
+                          <img src={`${api.imageUrl}${product.image}`} alt="product" className={styles.productImage}></img>
+                        )}
                         {product.name}
                       </td>
                       <td className={styles.td}>{product.price}</td>
@@ -115,50 +127,50 @@ class Component extends React.Component {
               <Container className={styles.formData}>
                 <Row>
                   <Col>
-                    <h2>Fierst name, last name:</h2>
+                    <h2 className={styles.formHeader}>First name, last name:</h2>
                   </Col>
                   <Col>
-                    <p>{form[0].name}</p>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <h2>Address</h2>
-                  </Col>
-                  <Col>
-                    <p>{form[0].address}</p>
+                    <p className={styles.text}>{form[0].name}</p>
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                    <h2>Email</h2>
+                    <h2 className={styles.formHeader}>Address</h2>
                   </Col>
                   <Col>
-                    <p>{form[0].email}</p>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <h2>Delivery method:</h2>
-                  </Col>
-                  <Col>
-                    <p>{form[0].delivery}</p>
+                    <p className={styles.text}>{form[0].address}</p>
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                    <h2>Payment method:</h2>
+                    <h2 className={styles.formHeader}>Email</h2>
                   </Col>
                   <Col>
-                    <p>{form[0].payment}</p>
+                    <p className={styles.text}>{form[0].email}</p>
                   </Col>
                 </Row>
                 <Row>
                   <Col>
-                    <h2>Additional remarks:</h2>
+                    <h2 className={styles.formHeader}>Delivery method:</h2>
                   </Col>
                   <Col>
-                    <p>{form[0].comment}</p>
+                    <p className={styles.text}>{form[0].delivery}</p>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <h2 className={styles.formHeader}>Payment method:</h2>
+                  </Col>
+                  <Col>
+                    <p className={styles.text}>{form[0].payment}</p>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <h2 className={styles.formHeader}>Additional remarks:</h2>
+                  </Col>
+                  <Col>
+                    <p className={styles.text}>{form[0].comment}</p>
                   </Col>
                 </Row>
               </Container>
@@ -184,10 +196,10 @@ class Component extends React.Component {
             <div className={styles.buttons}>
               <Button as={Link} to="/cart" className={styles.buttonLeft}>
                 <FaArrowCircleLeft className={styles.arrowLeft} />
-                <p>Make changes</p>
+                <p className={styles.buttonText}>Make changes</p>
               </Button>
               <Button as={Link} to="/Form" className={styles.buttonRight} onClick={submitFormRequest}>
-                <p>Submit order</p>
+                <p className={styles.buttonText}>Submit order</p>
                 <FaArrowCircleRight className={styles.arrowRight} />
               </Button>
             </div>
