@@ -53,11 +53,11 @@ class Component extends React.Component {
             <Table bordered hover>
               <thead>
                 <tr>
-                  <th>Product</th>
-                  <th>Unit price</th>
-                  <th>Value</th>
-                  <th>Amount</th>
-                  <th>Actions</th>
+                  <th className={styles.header}>Product</th>
+                  <th className={styles.header}>Unit price</th>
+                  <th className={styles.header}>Value</th>
+                  <th className={styles.header}>Amount</th>
+                  <th className={styles.header}>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -97,10 +97,10 @@ class Component extends React.Component {
               <div className={styles.buttons}>
                 <Button as={Link} to="/" className={styles.buttonLeft}>
                   <FaArrowCircleLeft className={styles.arrowLeft} />
-                  <p>Continue shopping</p>
+                  <p className={styles.paragraph}>Continue shopping</p>
                 </Button>
                 <Button as={Link} to="/Form" className={styles.buttonRight}>
-                  <p>Make order</p>
+                  <p className={styles.paragraph}>Make order</p>
                   <FaArrowCircleRight className={styles.arrowRight} />
                 </Button>
               </div>

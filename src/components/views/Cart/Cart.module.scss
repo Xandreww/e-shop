@@ -106,3 +106,125 @@
     }
   }
 }
+
+// Tablet
+@media (max-width: 768px) {
+  .root {
+    .arrowLeft {
+      margin-right: 10px;
+    }
+
+    .arrowRight {
+      margin-left: 10px;
+    }
+
+    .buttons {
+      width: 60%;
+    }
+
+    .paragraph {
+      white-space: nowrap;
+    }
+  }
+}
+
+// Mobile - L
+@media (max-width: 425px) {
+  .root {
+    margin: 10px 0;
+
+    .header {
+      font-size: 15px;
+      text-align: center;
+      white-space: nowrap;
+      line-height: 10px;
+    }
+
+    .removeButton {
+      padding: 5px;
+    }
+
+    .td {
+      padding: 2px;
+      text-align: center;
+    }
+
+    img {
+      margin-right: 0;
+    }
+
+    .leftSummary,
+    .rightSummary {
+      width: 100%;
+    }
+
+    .buttons {
+      width: 100%;
+      font-size: 12px;
+    }
+
+    .arrowLeft,
+    .arrowRight {
+      font-size: 13px;
+    }
+
+    .buttonLeft {
+      margin-right: 0px;
+    }
+  }
+}
+
+// Mobile - M
+@media (max-width: 375px) {
+  .root {
+    .buttonLeft {
+      margin-right: 0px;
+    }
+
+    .paragraph {
+      white-space: normal;
+      line-height: 15px;
+      width: 95px;
+    }
+
+    .buttonRight {
+      height: 44px;
+    }
+
+    .td {
+      width: 80px;
+    }
+
+    .header {
+      white-space: normal;
+      line-height: 15px;
+    }
+  }
+}
+
+// Mobile - S
+@media (max-width: 320px) {
+  .root {
+    .buttonLeft {
+      margin-right: 0px;
+    }
+
+    .paragraph {
+      white-space: normal;
+      line-height: 15px;
+      width: 95px;
+    }
+
+    .buttonRight {
+      height: 44px;
+    }
+
+    .td {
+      width: 80px;
+    }
+
+    .header {
+      white-space: normal;
+    }
+  }
+}

@@ -55,3 +55,25 @@
     }
   }
 }
+
+@media (max-width: 425px) {
+  .root {
+    .addRemove {
+      margin: 0 auto;
+
+      .addButton,
+      .removeButton {
+        margin: 0;
+        padding: 5px;
+      }
+
+      .removeButton {
+        margin-right: 5px;
+      }
+
+      .addButton {
+        margin-left: 5px;
+      }
+    }
+  }
+}
