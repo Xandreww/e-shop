@@ -2,7 +2,7 @@
 
 ## Project description
 
-The content was prepared independantely as a final project of Kodilla Wab Developer Plus bootcamp.
+The content was prepared independently as a final project of Kodilla Wab Developer Plus bootcamp.
 The site has been prepared in the **React** environment using **Redux** and other libraries.
 
 Product photos placed on the website are exemplary, and store functionalities are only used for educational purposes. It is not possible to order any of the products listed.
