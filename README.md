@@ -1,5 +1,9 @@
 # E-Shop
 
+## Preview
+
+https://e-shop-1.herokuapp.com/
+
 ## Project description
 
 This project is an attempt to imitate look and functionalities of commercial e-shop.

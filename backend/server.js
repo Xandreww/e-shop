@@ -37,8 +37,7 @@ app.use('*', (req, res) => {
 });
 
 /* MONGOOSE */
-const atlas = `mongodb+srv://user:2f5MigaVGajKwqDA@cluster0-fmrjz.mongodb.net/e-shop?retryWrites=true&w=majority`;
-mongoose.connect(atlas, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 db.once('open', () => {
