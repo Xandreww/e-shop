@@ -12,7 +12,8 @@
     "test-all": "react-scripts test --watchAll=false --noStackTrace",
     "test-related": "react-scripts test --watchAll=false --noStackTrace --findRelatedTests",
     "eject": "react-scripts eject",
-    "server": "npx nodemon backend/server.js"
+    "server": "npx nodemon backend/server.js",
+    "start-all": "yarn start server"
   },
   "prettier": {
     "tabWidth": 2,
@@ -62,10 +63,10 @@
     "react-test-renderer": "^16.12.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "uuid": "^7.0.3"
+    "uuid": "^7.0.3",
+    "redux-devtools-extension": "^2.13.8"
   },
   "devDependencies": {
-    "lint-staged": "^9.4.3",
-    "redux-devtools-extension": "^2.13.8"
+    "lint-staged": "^9.4.3"
   }
 }
